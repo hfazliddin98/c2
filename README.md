@@ -8,10 +8,15 @@ Bu dastur faqat **ta'lim va tadqiqot maqsadlarida** ishlatilishi kerak. Noqonuni
 
 ## Tarkibi
 
-- `server/` - C2 server komponenti
-- `agent/` - Target mashinada ishlaydigan agent
+- `server/` - C2 server komponentlari
+  - `app.py` - HTTP/Flask server (Web dashboard)  
+  - `tcp_server.py` - TCP socket server (Raw protocol)
+  - `cli.py` - Command line interface
+- `agent/` - Target mashinada ishlaydigan agentlar
+  - `client.py` - HTTP agent
+  - `tcp_client.py` - TCP agent
 - `common/` - Umumiy funksiyalar va utilities
-- `web/` - Web dashboard interface
+- `web/` - Web dashboard interface (kelajakda)
 
 ## O'rnatish
 
@@ -21,28 +26,56 @@ pip install -r requirements.txt
 
 ## Ishlatish
 
-### Server ishga tushirish:
+### HTTP Server (Tavsiya etiladi):
 ```bash
-cd server
-python app.py
+start_server.bat     # Web dashboard bilan
 ```
 
-### Web dashboard:
+### TCP Server (Professional):
 ```bash
-cd web
-python dashboard.py
+start_tcp_server.bat # Raw socket server
 ```
 
-## Xususiyatlar
+### Agent (Client):
+```bash
+start_agent.bat      # HTTP agent
+start_tcp_agent.bat  # TCP agent
+```
 
-- [x] Asosiy loyiha strukturasi
-- [x] Flask server
-- [x] Agent client  
-- [x] HTTP/JSON aloqa protokoli
-- [x] Web dashboard
-- [x] CLI interface
-- [x] Asosiy komandalar (exec, sysinfo, file operations)
-- [x] Demo script
+### Havoc-Style GUI:
+```bash
+start_havoc_gui.bat  # Modern GUI interface
+```
+
+### CLI Interface:
+```bash
+start_cli.bat        # Command line interface
+```
+
+## 🎯 Havoc-Style Xususiyatlar
+
+### Asosiy Framework
+- [x] HTTP Flask server (Web dashboard)
+- [x] TCP Socket server (Raw protocol)
+- [x] HTTP agent client  
+- [x] TCP agent client
+- [x] Modern Havoc-style GUI interface
+- [x] CLI interface (HTTP va TCP)
+
+### Professional Features (Havoc-like)
+- [x] **Listener Management** - HTTP, HTTPS, TCP listeners
+- [x] **Payload Generator** - EXE, DLL, PowerShell, Python payloads
+- [x] **Session Management** - Advanced agent metadata va monitoring
+- [x] **Command System** - Shell, PowerShell, file operations
+- [x] **File Browser** - Remote filesystem navigation
+- [x] **Team Server** - Multi-operator support
+
+### Security Features
+- [x] Session encryption va authentication
+- [x] Advanced command queuing
+- [x] Process monitoring va injection (educational)
+- [x] Privilege escalation detection
+- [x] Stealth communication protocols
 
 ## Qo'shimcha Fayllar
 

@@ -1,0 +1,21 @@
+@echo off
+echo ================================================
+echo C2 TCP Agent ishga tushirilmoqda...
+echo ================================================
+
+cd /d "%~dp0"
+
+REM Python mavjudligini tekshirish
+python --version >nul 2>&1
+if %errorlevel% neq 0 (
+    echo ❌ Python o'rnatilmagan yoki PATH da yo'q
+    pause
+    exit /b 1
+)
+
+REM TCP Agent ishga tushirish
+echo 🚀 TCP Agent ishga tushirilmoqda...
+cd agent
+python tcp_client.py
+
+pause

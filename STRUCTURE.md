@@ -1,17 +1,67 @@
 # C2 Platform - Loyiha Strukturasi
 
-## 📁 Asosiy Papkalar
+Bu loyihada **ikki xil server** mavjud:
+
+## 🌐 HTTP Server (Flask-based)
+- **Fayl**: `server/app.py`
+- **Port**: 8080 
+- **Protokol**: HTTP/JSON
+- **Xususiyatlari**:
+  - Web Dashboard (http://127.0.0.1:8080)
+  - REST API endpoints
+  - Real-time updates
+  - Browser-friendly interface
+
+## 🔌 TCP Server (Raw Socket)
+- **Fayl**: `server/tcp_server.py` 
+- **Port**: 9999
+- **Protokol**: Raw TCP Socket
+- **Xususiyatlari**:
+  - Tezkor aloqa
+  - Kam traffic
+  - Binary data support
+  - CLI interface
+
+## 🎯 Havoc C2 Framework
+
+Professional Havoc C2 ga o'xshash qilib yaratilgan framework.
+
+## 📂 Loyiha Strukturasi
 
 ```
 c2/
-├── 📄 README.md                 # Loyiha haqida ma'lumot
-├── 📄 requirements.txt          # Python dependencies
-├── 🚀 start_server.bat          # Server ishga tushirish
-├── 🚀 start_agent.bat           # Agent ishga tushirish  
-├── 🚀 start_cli.bat             # CLI ishga tushirish
+├── 📄 README.md                    # Loyiha haqida
+├── 📄 STRUCTURE.md                 # Loyiha strukturasi  
+├── 📄 requirements.txt             # Dependencies
+├── � demo.py                      # Avtomatik demo
 │
-├── 📁 server/                   # C2 Server komponenti
-│   ├── 📄 app.py               # Asosiy Flask server
+├── �🚀 Start Scripts               # Ishga tushirish skriptlari
+│   ├── start_server.bat           # HTTP server
+│   ├── start_agent.bat            # HTTP agent
+│   ├── start_tcp_server.bat       # TCP server
+│   ├── start_tcp_agent.bat        # TCP agent
+│   ├── start_havoc_gui.bat        # Havoc-style GUI
+│   └── start_cli.bat              # CLI interface
+│
+├── � server/                      # Server komponentlari
+│   ├── app.py                     # HTTP Flask server
+│   ├── tcp_server.py              # Raw TCP server
+│   ├── cli.py                     # CLI interface
+│   ├── listener_manager.py        # Listener boshqaruvi
+│   └── session_manager.py         # Session boshqaruvi
+│
+├── 📁 agent/                      # Agent komponentlari
+│   ├── client.py                  # HTTP agent
+│   └── tcp_client.py              # TCP agent
+│
+├── 📁 gui/                        # GUI komponentlari
+│   └── havoc_gui.py               # Havoc-style GUI
+│
+├── � common/                     # Umumiy modullar
+│   ├── config.py                  # Konfiguratsiya
+│   ├── utils.py                   # Utility funksiyalar
+│   ├── crypto.py                  # Shifrash
+│   └── commands.py                # Komanda handler
 │   └── 📄 cli.py               # Command Line Interface
 │
 ├── 📁 agent/                    # Agent (Client) komponenti
