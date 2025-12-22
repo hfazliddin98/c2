@@ -16,6 +16,30 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from common.config import *
 from common.utils import *
 
+
+def get_local_ip():
+    """Kompyuterning local network IP manzilini aniqlash"""
+    try:
+        # Internet ga test connection
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.settimeout(0.1)
+        # Google DNS ga ulanish (real connection yo'q, faqat routing)
+        s.connect(('8.8.8.8', 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+        return local_ip
+    except:
+        # Fallback: hostname orqali
+        try:
+            hostname = socket.gethostname()
+            local_ip = socket.gethostbyname(hostname)
+            if local_ip.startswith('127.'):
+                # 127.x.x.x bo'lsa, network interface'larni tekshirish
+                return '0.0.0.0'
+            return local_ip
+        except:
+            return '0.0.0.0'
+
 class TCPServer:
     """TCP C2 Server klassi"""
     
@@ -36,7 +60,11 @@ class TCPServer:
             self.socket.listen(10)
             
             self.running = True
+            local_ip = get_local_ip()
             self.log(f"🚀 TCP Server ishga tushdi: {self.host}:{self.port}")
+            if local_ip and local_ip != '0.0.0.0':
+                self.log(f"📍 Local IP: {local_ip}:{self.port}")
+                self.log(f"💡 Boshqa qurilmalardan ulanish: {local_ip}:{self.port}")
             
             while self.running:
                 try:

