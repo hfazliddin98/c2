@@ -32,10 +32,13 @@ Professional Havoc C2 ga o'xshash qilib yaratilgan framework.
 c2/
 ├── 📄 README.md                    # Loyiha haqida
 ├── 📄 STRUCTURE.md                 # Loyiha strukturasi  
+├── 📄 CROSS_PLATFORM.md            # Ko'p platformali qo'llanma
 ├── 📄 requirements.txt             # Dependencies
-├── � demo.py                      # Avtomatik demo
+├── 🐍 demo.py                      # Avtomatik demo
+├── 🐍 check_platform.py            # Platform detector
 │
-├── �🚀 Start Scripts               # Ishga tushirish skriptlari
+├── 🚀 Windows Scripts              # Windows uchun
+│   ├── setup.bat                  # Avtomatik o'rnatish
 │   ├── start_server.bat           # HTTP server
 │   ├── start_agent.bat            # HTTP agent
 │   ├── start_tcp_server.bat       # TCP server
@@ -43,7 +46,16 @@ c2/
 │   ├── start_havoc_gui.bat        # Havoc-style GUI
 │   └── start_cli.bat              # CLI interface
 │
-├── � server/                      # Server komponentlari
+├── 🐧 Linux/macOS Scripts         # Linux/macOS uchun
+│   ├── setup.sh                   # Avtomatik o'rnatish
+│   ├── start_server.sh            # HTTP server
+│   ├── start_agent.sh             # HTTP agent
+│   ├── start_tcp_server.sh        # TCP server
+│   ├── start_tcp_agent.sh         # TCP agent
+│   ├── start_havoc_gui.sh         # Havoc-style GUI
+│   └── start_cli.sh               # CLI interface
+│
+├── 📁 server/                      # Server komponentlari
 │   ├── app.py                     # HTTP Flask server
 │   ├── tcp_server.py              # Raw TCP server
 │   ├── cli.py                     # CLI interface
@@ -57,23 +69,13 @@ c2/
 ├── 📁 gui/                        # GUI komponentlari
 │   └── havoc_gui.py               # Havoc-style GUI
 │
-├── � common/                     # Umumiy modullar
+├── 📁 common/                     # Umumiy modullar
 │   ├── config.py                  # Konfiguratsiya
-│   ├── utils.py                   # Utility funksiyalar
+│   ├── utils.py                   # Utility funksiyalar (platform detection)
 │   ├── crypto.py                  # Shifrash
-│   └── commands.py                # Komanda handler
-│   └── 📄 cli.py               # Command Line Interface
+│   └── commands.py                # Komanda handler (cross-platform)
 │
-├── 📁 agent/                    # Agent (Client) komponenti
-│   └── 📄 client.py            # Agent client dasturi
-│
-├── 📁 common/                   # Umumiy modullar
-│   ├── 📄 config.py            # Konfiguratsiya sozlamalari
-│   ├── 📄 utils.py             # Utility funksiyalar
-│   ├── 📄 crypto.py            # Shifrash funksiyalari
-│   └── 📄 commands.py          # Komandalar moduli
-│
-└── 📁 web/                      # Web interface (kelajak)
+└── 📁 web/                        # Web interface (kelajak)
     └── (bo'sh)
 ```
 

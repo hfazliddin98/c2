@@ -92,23 +92,37 @@ class CommandHandler:
             return {'error': f'System info olishda xato: {str(e)}'}
     
     def execute_shell_command(self, command: str) -> Dict[str, Any]:
-        """Shell komandani bajarish"""
+        """Shell komandani bajarish (cross-platform)"""
         try:
             if not command:
                 return {'error': 'Bo\'sh komanda'}
             
             # Xavfli komandalarni bloklash
             dangerous_commands = [
-                'format', 'del /f', 'rm -rf', 'shutdown', 'reboot', 
-                'mkfs', 'dd if=', 'fdisk', 'parted'
+                'format', 'del /f', 'rm -rf /', 'shutdown', 'reboot', 
+                'mkfs', 'dd if=', 'fdisk', 'parted', 'diskpart'
             ]
             
             if any(dangerous in command.lower() for dangerous in dangerous_commands):
                 return {'error': 'Xavfli komanda bloklandi'}
             
+            # Platform-specific shell
+            import platform
+            shell_cmd = command
+            use_shell = True
+            
+            # Windows uchun
+            if platform.system().lower() == 'windows':
+                # PowerShell yoki cmd komandalarini to'g'ri bajarish
+                pass
+            else:
+                # Linux/macOS uchun
+                # Agar kerak bo'lsa, shebang yoki explicit shell
+                pass
+            
             result = subprocess.run(
-                command,
-                shell=True,
+                shell_cmd,
+                shell=use_shell,
                 capture_output=True,
                 text=True,
                 timeout=30
@@ -116,6 +130,7 @@ class CommandHandler:
             
             return {
                 'command': command,
+                'platform': platform.system(),
                 'returncode': result.returncode,
                 'stdout': result.stdout,
                 'stderr': result.stderr
@@ -263,28 +278,56 @@ class CommandHandler:
             return {'error': f'Kill xatosi: {str(e)}'}
     
     def take_screenshot(self, data: str = None) -> Dict[str, Any]:
-        """Ekran suratini olish"""
+        """Ekran suratini olish (cross-platform)"""
         try:
-            # PIL (Pillow) kutubxonasi kerak
-            from PIL import ImageGrab
             import io
+            import platform
             
-            screenshot = ImageGrab.grab()
+            # Platform detection
+            system = platform.system().lower()
             
-            # Base64 ga o'girish
+            if system == 'windows' or system == 'darwin':  # Windows yoki macOS
+                from PIL import ImageGrab
+                screenshot = ImageGrab.grab()
+            elif system == 'linux':
+                # Linux uchun pyscreenshot
+                try:
+                    import pyscreenshot as ImageGrab
+                    screenshot = ImageGrab.grab()
+                except ImportError:
+                    # Fallback - PIL va X11
+                    from PIL import ImageGrab
+                    screenshot = ImageGrab.grab()
+            else:
+                return {'error': f'Platform qo\'llab-quvvatlanmaydi: {system}'}
+            
+            # Quality sozlash (data: quality parametri)
+            quality = 85  # Default
+            if data and data.isdigit():
+                quality = min(100, max(10, int(data)))
+            
+            # JPEG formatda saqlash (kichikroq hajm)
             buffer = io.BytesIO()
-            screenshot.save(buffer, format='PNG')
+            screenshot = screenshot.convert('RGB')  # JPEG uchun RGB kerak
+            screenshot.save(buffer, format='JPEG', quality=quality, optimize=True)
             screenshot_data = base64.b64encode(buffer.getvalue()).decode()
             
             return {
                 'width': screenshot.width,
                 'height': screenshot.height,
                 'data': screenshot_data,
-                'format': 'PNG',
+                'format': 'JPEG',
+                'quality': quality,
+                'size': len(screenshot_data),
+                'platform': system,
+                'timestamp': datetime.now().isoformat(),
                 'message': 'Screenshot muvaffaqiyatli olindi'
             }
-        except ImportError:
-            return {'error': 'PIL (Pillow) kutubxonasi o\'rnatilmagan'}
+        except ImportError as e:
+            return {
+                'error': f'Kerakli kutubxona o\'rnatilmagan: {str(e)}',
+                'install': 'pip install pillow pyscreenshot'
+            }
         except Exception as e:
             return {'error': f'Screenshot xatosi: {str(e)}'}
     

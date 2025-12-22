@@ -4,7 +4,7 @@ Umumiy konfiguratsiya sozlamalari
 
 # Server sozlamalari
 SERVER_HOST = "127.0.0.1"
-SERVER_PORT = 8080
+SERVER_PORT = 8000  # Django server port
 SECRET_KEY = "c2_platform_secret_key_2025"
 
 # Xavfsizlik sozlamalari

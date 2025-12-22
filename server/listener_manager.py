@@ -1,12 +1,12 @@
 """
 Havoc-Style Listener Management System
 HTTP, HTTPS, TCP listenerlarni boshqarish
+Django integratsiyasi
 """
 
 import threading
 import socket
 import ssl
-from flask import Flask
 from datetime import datetime
 import json
 import sys
@@ -111,44 +111,19 @@ class ListenerManager:
             self.listeners[name]['status'] = 'stopped'
             
         if name in self.running_listeners:
-            # Thread ni to'xtatish (Flask uchun murakkab)
+            # Thread ni to'xtatish
             del self.running_listeners[name]
             
         self.log(f"Listener to'xtatildi: {name}")
         return True
     
     def _run_http_listener(self, name, config):
-        """HTTP listener ishga tushirish"""
+        """HTTP listener Django orqali ishga tushadi"""
         try:
-            app = Flask(f"listener_{name}")
-            
-            @app.route('/', methods=['GET', 'POST'])
-            def index():
-                return "Havoc C2 Listener - Educational Purpose Only"
-            
-            @app.route('/api/register', methods=['POST'])
-            def register():
-                # Agent registration
-                config['connections'] += 1
-                return {"status": "success", "message": "Agent registered"}
-            
-            @app.route('/api/heartbeat', methods=['POST'])
-            def heartbeat():
-                # Agent heartbeat
-                return {"status": "success", "commands": []}
-            
-            # SSL context
-            ssl_context = None
-            if config['ssl_enabled']:
-                ssl_context = 'adhoc'  # Self-signed certificate
-            
-            app.run(
-                host=config['host'],
-                port=config['port'],
-                debug=False,
-                ssl_context=ssl_context,
-                threaded=True
-            )
+            # HTTP listener Django URLs va ViewSets orqali ishlaydi
+            # c2_agents/urls.py ga qo'shilgan
+            self.log(f"HTTP Listener Django serverda: {config['host']}:{config['port']}")
+            config['status'] = 'running'
             
         except Exception as e:
             self.log(f"HTTP Listener xatosi [{name}]: {e}")

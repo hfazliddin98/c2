@@ -8,8 +8,48 @@ import platform
 import socket
 import psutil
 import os
+import sys
 from datetime import datetime
 from typing import Dict, Any
+
+
+def is_windows() -> bool:
+    """Windows platformini tekshirish"""
+    return platform.system().lower() == 'windows'
+
+
+def is_linux() -> bool:
+    """Linux platformini tekshirish"""
+    return platform.system().lower() == 'linux'
+
+
+def is_macos() -> bool:
+    """macOS platformini tekshirish"""
+    return platform.system().lower() == 'darwin'
+
+
+def get_platform_name() -> str:
+    """Platform nomini olish"""
+    system = platform.system().lower()
+    if system == 'windows':
+        return 'Windows'
+    elif system == 'linux':
+        return 'Linux'
+    elif system == 'darwin':
+        return 'macOS'
+    else:
+        return system.capitalize()
+
+
+def get_shell_command(command_type: str) -> str:
+    """Platformaga mos shell komanda olish"""
+    commands = {
+        'list_dir': 'dir' if is_windows() else 'ls -la',
+        'clear': 'cls' if is_windows() else 'clear',
+        'path_sep': '\\' if is_windows() else '/',
+        'shell': 'cmd.exe' if is_windows() else '/bin/bash',
+    }
+    return commands.get(command_type, '')
 
 
 def get_system_info() -> Dict[str, Any]:
@@ -18,16 +58,22 @@ def get_system_info() -> Dict[str, Any]:
         info = {
             "hostname": socket.gethostname(),
             "platform": platform.platform(),
+            "platform_name": get_platform_name(),
+            "system": platform.system(),
+            "release": platform.release(),
+            "version": platform.version(),
             "processor": platform.processor(),
             "architecture": platform.architecture()[0],
             "username": os.getenv("USERNAME") or os.getenv("USER"),
             "ip_address": get_local_ip(),
+            "python_version": sys.version,
             "memory": {
                 "total": psutil.virtual_memory().total,
                 "available": psutil.virtual_memory().available,
                 "percent": psutil.virtual_memory().percent
             },
             "cpu_percent": psutil.cpu_percent(),
+            "cpu_count": psutil.cpu_count(),
             "boot_time": psutil.boot_time(),
             "timestamp": datetime.now().isoformat()
         }
