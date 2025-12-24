@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     
     # C2 Apps
     # 'c2_core',      # Muvaqqatan o'chirilgan
-    # 'c2_agents',    # Muvaqqatan o'chirilgan
+    'c2_agents',      # Agent API
 ]
 
 MIDDLEWARE = [

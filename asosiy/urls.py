@@ -36,11 +36,8 @@ urlpatterns = [
     path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
-    # C2 APIs - muvaqqatan o'chirilgan
-    # path('api/agents/', include('c2_agents.urls')),
-    # path('api/listeners/', include('c2_listeners.urls')),
-    # path('api/commands/', include('c2_commands.urls')),
-    # path('api/core/', include('c2_core.urls')),
+    # Agent APIs
+    path('api/agent/', include('c2_agents.agent_urls')),
 ]
 
 # Serve media files in development
