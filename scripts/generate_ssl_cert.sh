@@ -1,0 +1,40 @@
+#!/bin/bash
+# SSL Sertifikat Generatori
+# C2 Platform uchun HTTPS sertifikat yaratadi
+
+echo ""
+echo "========================================"
+echo "   SSL SERTIFIKAT GENERATOR"
+echo "========================================"
+echo ""
+
+cd "$(dirname "$0")/.."
+mkdir -p certs
+cd certs
+
+echo "[*] SSL sertifikat yaratilmoqda..."
+echo ""
+
+# Private key yaratish
+openssl genrsa -out server.key 2048
+
+# Certificate Signing Request (CSR) yaratish
+openssl req -new -key server.key -out server.csr \
+    -subj "/C=UZ/ST=Tashkent/L=Tashkent/O=C2Platform/OU=Security/CN=localhost"
+
+# Self-signed sertifikat yaratish (365 kun)
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+# PEM format yaratish (Django uchun)
+cat server.crt server.key > server.pem
+
+echo ""
+echo "[+] SSL sertifikat muvaffaqiyatli yaratildi!"
+echo ""
+echo "Fayllar:"
+echo "  - certs/server.key  (Private Key)"
+echo "  - certs/server.crt  (Certificate)"
+echo "  - certs/server.pem  (Combined PEM)"
+echo ""
+echo "[+] Django HTTPS serverni ishga tushirish mumkin"
+echo ""

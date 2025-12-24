@@ -1,21 +1,11 @@
 @echo off
-echo ================================================
-echo C2 Platform CLI ishga tushirilmoqda...
-echo ================================================
+REM C2 Platform - CLI Mode
+echo ============================================
+echo   C2 Platform - CLI Mode
+echo ============================================
+echo.
 
-cd /d "%~dp0"
-
-REM Python mavjudligini tekshirish
-python --version >nul 2>&1
-if %errorlevel% neq 0 (
-    echo ❌ Python o'rnatilmagan yoki PATH da yo'q
-    pause
-    exit /b 1
-)
-
-REM CLI ishga tushirish
-echo 🚀 CLI ishga tushirilmoqda...
-cd server
-python cli.py
+echo Starting TCP Server with CLI...
+python server\tcp_server.py
 
 pause

@@ -15,6 +15,19 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-in-produc
 DEBUG = config('DEBUG', default=True, cast=bool)  # Development uchun True
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
 
+# HTTPS Security Settings
+SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=False, cast=bool)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=False, cast=bool)
+CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default=False, cast=bool)
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+
+# SSL Certificate paths (for HTTPS server)
+SSL_CERTIFICATE = BASE_DIR / 'certs' / 'server.crt'
+SSL_PRIVATE_KEY = BASE_DIR / 'certs' / 'server.key'
+
 # Application definition
 INSTALLED_APPS = [
     # 'daphne',  # ASGI server - muvaqqatan o'chirilgan
@@ -165,6 +178,22 @@ REST_FRAMEWORK = {
         'anon': '100/hour',
         'user': '10000/hour',  # 10k requests per hour
     },
+}
+
+# JWT Settings (djangorestframework-simplejwt)
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
 }
 
 # CORS

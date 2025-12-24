@@ -17,7 +17,6 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from common.config import *
 from common.utils import *
-from common.jwt_auth import JWTAuthManager
 
 
 class HavocGUI:
@@ -29,28 +28,15 @@ class HavocGUI:
         self.root.geometry("1200x800")
         self.root.configure(bg='#1e1e1e')
         
-        # HTTPS Server connection - Django REST API
-        # HTTPS ishlatish, SSL sertifikatni tekshirmaslik (self-signed)
-        self.server_url = f"https://{SERVER_HOST}:8443"  # HTTPS port
+        # Server connection - Django REST API
+        self.server_url = f"http://{SERVER_HOST}:{SERVER_PORT}"
         self.django_api = f"{self.server_url}/api"
-        
-        # JWT Authentication Manager
-        self.auth_manager = JWTAuthManager(
-            server_url=self.server_url,
-            verify_ssl=False  # Self-signed certificate uchun
-        )
-        self.session = self.auth_manager.get_session()
+        self.session = requests.Session()
         
         # Data
         self.agents = {}
         self.listeners = {}
         self.selected_agent = None
-        
-        # Login dialog ko'rsatish
-        if not self.show_login_dialog():
-            messagebox.showerror("Xatolik", "Login amalga oshmadi!")
-            self.root.destroy()
-            return
         
         self.setup_styles()
         self.create_menu()
@@ -583,98 +569,7 @@ class HavocGUI:
                           "Havoc-Style C2 Framework\\n\\n"
                           "Ta'lim maqsadida yaratilgan\\n"
                           "Version: 1.0\\n\\n"
-                          "🔒 HTTPS + JWT Authentication\\n"
                           "⚠️ Faqat o'rganish uchun!")
-    
-    def show_login_dialog(self):
-        """Login dialog ko'rsatish"""
-        login_window = tk.Toplevel(self.root)
-        login_window.title("Login - C2 Platform")
-        login_window.geometry("400x250")
-        login_window.configure(bg='#1e1e1e')
-        login_window.resizable(False, False)
-        
-        # Centered
-        login_window.transient(self.root)
-        login_window.grab_set()
-        
-        # Title
-        title_label = tk.Label(login_window, text="🔒 C2 Platform Login",
-                              font=('Arial', 16, 'bold'),
-                              bg='#1e1e1e', fg='#00ff00')
-        title_label.pack(pady=20)
-        
-        # Username
-        username_frame = tk.Frame(login_window, bg='#1e1e1e')
-        username_frame.pack(pady=10)
-        tk.Label(username_frame, text="Username:", bg='#1e1e1e', fg='white',
-                font=('Arial', 10)).pack(side=tk.LEFT, padx=5)
-        username_entry = tk.Entry(username_frame, width=25, font=('Arial', 10))
-        username_entry.pack(side=tk.LEFT, padx=5)
-        username_entry.insert(0, "admin")  # Default
-        
-        # Password
-        password_frame = tk.Frame(login_window, bg='#1e1e1e')
-        password_frame.pack(pady=10)
-        tk.Label(password_frame, text="Password:", bg='#1e1e1e', fg='white',
-                font=('Arial', 10)).pack(side=tk.LEFT, padx=5)
-        password_entry = tk.Entry(password_frame, width=25, show='*', font=('Arial', 10))
-        password_entry.pack(side=tk.LEFT, padx=5)
-        
-        # Status label
-        status_label = tk.Label(login_window, text="", bg='#1e1e1e', fg='yellow',
-                               font=('Arial', 9))
-        status_label.pack(pady=5)
-        
-        login_success = [False]  # List untuk mutable
-        
-        def do_login():
-            username = username_entry.get()
-            password = password_entry.get()
-            
-            if not username or not password:
-                status_label.config(text="Username va Password kiriting!", fg='red')
-                return
-            
-            status_label.config(text="Login qilinmoqda...", fg='yellow')
-            login_window.update()
-            
-            # JWT login
-            if self.auth_manager.login(username, password):
-                login_success[0] = True
-                login_window.destroy()
-            else:
-                status_label.config(text="Login xatolik! Username yoki parol noto'g'ri", fg='red')
-        
-        def on_enter(event):
-            do_login()
-        
-        # Buttons
-        button_frame = tk.Frame(login_window, bg='#1e1e1e')
-        button_frame.pack(pady=20)
-        
-        login_btn = tk.Button(button_frame, text="Login", command=do_login,
-                             bg='#00ff00', fg='black', font=('Arial', 10, 'bold'),
-                             width=10, cursor='hand2')
-        login_btn.pack(side=tk.LEFT, padx=5)
-        
-        cancel_btn = tk.Button(button_frame, text="Cancel",
-                              command=login_window.destroy,
-                              bg='#ff0000', fg='white', font=('Arial', 10, 'bold'),
-                              width=10, cursor='hand2')
-        cancel_btn.pack(side=tk.LEFT, padx=5)
-        
-        # Enter key binding
-        password_entry.bind('<Return>', on_enter)
-        username_entry.bind('<Return>', on_enter)
-        
-        # Focus
-        username_entry.focus()
-        
-        # Wait for dialog to close
-        login_window.wait_window()
-        
-        return login_success[0]
     
     def start_auto_refresh(self):
         """Avtomatik yangilanish"""
@@ -700,7 +595,6 @@ class HavocGUI:
     def run(self):
         """GUI ishga tushirish"""
         self.log_to_console("Havoc-Style C2 Framework Started")
-        self.log_to_console("🔒 HTTPS + JWT Authentication Enabled")
         self.log_to_console("⚠️ Educational Purpose Only!")
         self.refresh_agents()
         self.root.mainloop()

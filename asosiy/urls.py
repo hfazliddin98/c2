@@ -7,7 +7,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.http import JsonResponse
-# from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 def home(request):
     """API home page"""
@@ -18,6 +18,10 @@ def home(request):
         'message': 'Django server ishlayapti!',
         'endpoints': {
             'admin': '/admin/',
+            'auth': {
+                'login': '/api/auth/token/',
+                'refresh': '/api/auth/token/refresh/',
+            }
         }
     })
 
@@ -28,9 +32,9 @@ urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
     
-    # Authentication - muvaqqatan o'chirilgan
-    # path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # Authentication (JWT Token)
+    path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
     # C2 APIs - muvaqqatan o'chirilgan
     # path('api/agents/', include('c2_agents.urls')),

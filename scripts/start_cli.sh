@@ -1,22 +1,14 @@
 #!/bin/bash
-# C2 Platform - CLI Interface (Linux/macOS)
+# C2 Platform - CLI Mode
 
-echo "================================================"
-echo "💻 C2 Platform CLI Interface"
-echo "================================================"
+echo "============================================"
+echo "  C2 Platform - CLI Mode"
+echo "============================================"
 echo ""
 
-# Ranglar
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-YELLOW='\033[1;33m'
-NC='\033[0m'
-
-# Python tekshirish
-if ! command -v python3 &> /dev/null; then
-    echo -e "${RED}❌ Python3 topilmadi!${NC}"
-    exit 1
-fi
+echo "Starting TCP Server with CLI..."
+cd "$(dirname "$0")/.."
+python3 server/tcp_server.py
 
 # Virtual environment
 if [ -d "venv" ]; then

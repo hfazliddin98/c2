@@ -12,6 +12,7 @@ import os
 # Common modullarni import qilish
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from common.config import *
+from common.jwt_auth import JWTAuthManager
 
 
 class C2CLI(cmd.Cmd):
@@ -22,6 +23,7 @@ class C2CLI(cmd.Cmd):
 ║                    🎯 C2 Platform CLI                        ║
 ║                  Command Line Interface                      ║
 ║                                                              ║
+║  🔒 HTTPS + JWT Authentication                              ║
 ║  ⚠️  Faqat ta'lim maqsadida ishlatilsin!                    ║
 ║                                                              ║
 ║  Yordam uchun: help yoki ?                                  ║
@@ -32,9 +34,19 @@ class C2CLI(cmd.Cmd):
     
     def __init__(self):
         super().__init__()
-        self.server_url = f"http://{SERVER_HOST}:{SERVER_PORT}"
-        self.session = requests.Session()
+        # HTTPS Server bilan ulanish
+        self.server_url = f"https://{SERVER_HOST}:8443"  # HTTPS port
+        
+        # JWT Authentication
+        self.auth_manager = JWTAuthManager(
+            server_url=self.server_url,
+            verify_ssl=False  # Self-signed certificate uchun
+        )
+        self.session = self.auth_manager.get_session()
         self.current_agent = None
+        
+        # Login qilish
+        self.login()
     
     def do_agents(self, line):
         """Barcha agentlar ro'yxatini ko'rsatish"""
@@ -266,6 +278,38 @@ class C2CLI(cmd.Cmd):
         else:
             print(f"\n❌ Xato: {result.get('error')}")
     
+    def login(self):
+        """JWT login qilish"""
+        print("\n🔒 Login talab qilinadi...")
+        
+        # Username
+        username = input("Username [admin]: ").strip() or "admin"
+        
+        # Password
+        import getpass
+        password = getpass.getpass("Password: ")
+        
+        if not password:
+            print("❌ Parol bo'sh bo'lishi mumkin emas!")
+            sys.exit(1)
+        
+        # Login
+        print("\n⏳ Login qilinmoqda...")
+        if self.auth_manager.login(username, password):
+            print("✅ Login muvaffaqiyatli!")
+            print(f"👤 Foydalanuvchi: {username}")
+            print(f"🔗 Server: {self.server_url}\n")
+        else:
+            print("❌ Login xatolik! Username yoki parol noto'g'ri")
+            sys.exit(1)
+    
+    def do_logout(self, line):
+        """Logout qilish"""
+        self.auth_manager.logout()
+        print("✅ Logout muvaffaqiyatli")
+        print("👋 Xayr!")
+        return True
+    
     def do_help_commands(self, line):
         """Barcha mavjud komandalar ro'yxati"""
         commands = {
@@ -277,6 +321,7 @@ class C2CLI(cmd.Cmd):
             'screenshot [quality]': 'Ekran suratini olish (quality: 10-100)',
             'payload <type> <output>': 'Payload yaratish (type: python, powershell, bash, batch, vbs)',
             'status': 'Server holati',
+            'logout': 'Logout qilish',
             'clear': 'Ekranni tozalash',
             'exit/quit': 'Chiqish'
         }
@@ -300,6 +345,7 @@ class C2CLI(cmd.Cmd):
 def main():
     """Asosiy funksiya"""
     print("🚀 C2 Platform CLI ishga tushmoqda...")
+    print("🔒 HTTPS + JWT Authentication")
     
     try:
         cli = C2CLI()

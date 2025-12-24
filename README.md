@@ -16,44 +16,124 @@ Bu dastur faqat **ta'lim va tadqiqot maqsadlarida** ishlatilishi kerak. Noqonuni
 - **Server:** Gunicorn (HTTP) + Daphne (WebSocket)
 - **Scalability:** 10,000+ concurrent connections
 
-## 📂 Tarkibi
+## 🏗️ Arxitektura
 
-- `asosiy/` - Django project (settings, urls, wsgi, asgi, celery)
-- `c2_agents/` - Django app (models, views, tasks)
-- `c2_core/` - Django app (consumers, routing, websocket)
-- `server/` - TCP server, CLI, listener/session managers
-- `agent/` - TCP agent client
-- `common/` - Umumiy funksiyalar va payload generator
-- `gui/` - Havoc-style GUI va Payload Generator GUI
-- `scripts/` - Launcher scriptlar
+```
+┌─────────────┐
+│  OPERATOR   │
+│ (CLI / GUI) │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────────┐
+│   SERVER LAYER      │
+│                     │
+│  • TCP Server       │ ◄──► Agent'lar (TCP Socket)
+│  • Command Handler  │
+│  • Health Monitor   │
+│  • Django (Optional)│
+└─────────────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│   AGENT LAYER       │
+│                     │
+│  • Desktop Agent    │
+│  • Mobile Agent     │
+└─────────────────────┘
+```
+
+**To'liq:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+
+## 📂 Loyiha Strukturasi
+
+```
+c2/
+├── README.md                    # Asosiy dokumentatsiya
+├── manage.py                    # Django management
+├── requirements.txt             # Python dependencies
+├── db.sqlite3                  # Development database
+│
+├── docs/                       # 📚 Dokumentatsiya
+│   ├── QUICK_START.md         # Tezkor boshlash
+│   ├── STRUCTURE.md           # Arxitektura
+│   ├── CLI_GUI_MODE.md        # CLI va GUI rejimi
+│   ├── ANDROID_SETUP.md       # Android agent setup
+│   ├── PAYLOAD_GENERATOR.md   # Payload generator guide
+│   └── ...
+│
+├── scripts/                    # ⚙️ Barcha scriptlar
+│   ├── START_CLI.bat/sh       # CLI rejimi
+│   ├── START_GUI.bat/sh       # GUI rejimi
+│   ├── START_ALL.bat/sh       # Full stack
+│   ├── launcher.bat/sh        # Interaktiv launcher
+│   ├── setup.bat/sh           # O'rnatish
+│   └── ...
+│
+├── server/                     # 🖥️ Server komponentlari
+│   ├── tcp_server.py          # TCP C2 Server
+│   ├── command_handler.py     # Komanda handler
+│   ├── cli.py                 # CLI interface
+│   └── ...
+│
+├── agent/                      # 🤖 Agent clients
+│   ├── tcp_client.py          # Desktop agent
+│   ├── mobile_agent.py        # Mobile agent
+│   └── smart_client.py        # Smart agent
+│
+├── gui/                        # 🎨 GUI interfaces
+│   ├── tcp_server_gui.py      # Modern TCP GUI
+│   ├── havoc_gui.py           # Havoc-style interface
+│   └── payload_generator_gui.py
+│
+├── common/                     # 📦 Umumiy modullar
+│   ├── config.py              # Konfiguratsiya
+│   ├── utils.py               # Utility functions
+│   ├── payload_generator.py   # Payload generator
+│   └── ...
+│
+└── asosiy/                     # ⚙️ Django core
+    ├── settings.py
+    ├── urls.py
+    └── ...
+```
 
 ## 🚀 Tezkor Ishga Tushirish
 
-### 1. O'rnatish:
+### Variant 1: Quick Start (Tavsiya etiladi)
 ```bash
 # Windows
-scripts\setup.bat
+QUICK_START.bat
 
 # Linux/macOS
-chmod +x scripts/setup.sh && scripts/setup.sh
+chmod +x QUICK_START.sh && ./QUICK_START.sh
 ```
 
-### 2. Server ishga tushirish:
+### Variant 2: CLI Rejimi (Terminal)
 ```bash
 # Windows
-scripts\start_server.bat
+scripts\START_CLI.bat
 
 # Linux/macOS
-scripts/start_server.sh
+scripts/START_CLI.sh
 ```
 
-### 3. Interaktiv Launcher (Barchasi):
+### Variant 3: GUI Rejimi (Visual Interface)
 ```bash
 # Windows
-launcher.bat
+scripts\START_GUI.bat
 
 # Linux/macOS
-./launcher.sh
+scripts/START_GUI.sh
+```
+
+### Variant 4: Full Stack (Django + Barcha serverlar)
+```bash
+# Windows
+scripts\START_ALL.bat
+
+# Linux/macOS
+scripts/START_ALL.sh
 ```
 
 ## 📋 Barcha Komandalar

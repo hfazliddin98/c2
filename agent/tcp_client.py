@@ -122,6 +122,13 @@ class TCPAgent:
             cmd_type = command.get('type', '')
             cmd_id = command.get('id', 'unknown')
             
+            # Disconnect signal tekshirish
+            if cmd_type == 'disconnect':
+                reason = command.get('reason', 'Server disconnected')
+                self.log(f"🚫 Server tomonidan uzildi: {reason}")
+                self.running = False
+                return None
+            
             self.log(f"🎯 Komanda: {cmd_type} (ID: {cmd_id})")
             
             if cmd_type == 'heartbeat':
