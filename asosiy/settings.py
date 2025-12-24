@@ -6,6 +6,7 @@ Production-ready configuration for 10,000+ concurrent users
 import os
 from pathlib import Path
 from decouple import config
+import dj_database_url
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,7 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',  # Muvaqqatan o'chirilgan
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Static files (Render)
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -86,18 +87,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'asosiy.wsgi.application'
 
 # Database - PostgreSQL for production
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='c2_platform'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default='postgres'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
-        'CONN_MAX_AGE': 600,  # Connection pooling
-        'OPTIONS': {
-            'connect_timeout': 10,
-        },
+# Render.com auto-detects DATABASE_URL environment variable
+if 'DATABASE_URL' in os.environ:
+    # Render/Railway: PostgreSQL via DATABASE_URL
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
+else:
+    # Local development: PostgreSQL
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME', default='c2_platform'),
+            'USER': config('DB_USER', default='postgres'),
+            'PASSWORD': config('DB_PASSWORD', default='postgres'),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='5432'),
+            'CONN_MAX_AGE': 600,  # Connection pooling
+            'OPTIONS': {
+                'connect_timeout': 10,
+            },
     }
 }
 
