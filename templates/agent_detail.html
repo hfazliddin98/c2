@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}Agent {{ agent.agent_id }} - C2 Platform{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>👾 Agent Details</h2>
+    <div class="info-grid">
+        <div class="info-item">
+            <strong>Agent ID:</strong>
+            <span style="font-family: monospace;">{{ agent.agent_id }}</span>
+        </div>
+        <div class="info-item">
+            <strong>Hostname:</strong>
+            <span>{{ agent.hostname }}</span>
+        </div>
+        <div class="info-item">
+            <strong>Username:</strong>
+            <span>{{ agent.username|default:"-" }}</span>
+        </div>
+        <div class="info-item">
+            <strong>IP Address:</strong>
+            <span>{{ agent.ip_address }}</span>
+        </div>
+        <div class="info-item">
+            <strong>Platform:</strong>
+            <span>{{ agent.platform }}</span>
+        </div>
+        <div class="info-item">
+            <strong>Architecture:</strong>
+            <span>{{ agent.architecture }}</span>
+        </div>
+        <div class="info-item">
+            <strong>Status:</strong>
+            <span>
+                {% if agent.status == 'active' %}
+                    <span class="badge badge-success">Active</span>
+                {% else %}
+                    <span class="badge badge-danger">Offline</span>
+                {% endif %}
+            </span>
+        </div>
+        <div class="info-item">
+            <strong>First Seen:</strong>
+            <span>{{ agent.first_seen|date:"Y-m-d H:i:s" }}</span>
+        </div>
+        <div class="info-item">
+            <strong>Last Seen:</strong>
+            <span>{{ agent.last_seen|date:"Y-m-d H:i:s" }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>📜 Command History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cmd in commands %}
+            <tr>
+                <td style="font-family: monospace;">{{ cmd.command_type }}</td>
+                <td>
+                    {% if cmd.status == 'completed' %}
+                        <span class="badge badge-success">Completed</span>
+                    {% elif cmd.status == 'pending' %}
+                        <span class="badge badge-warning">Pending</span>
+                    {% else %}
+                        <span class="badge badge-danger">Failed</span>
+                    {% endif %}
+                </td>
+                <td>{{ cmd.created_at|date:"Y-m-d H:i:s" }}</td>
+                <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis;">
+                    {{ cmd.result|default:"-"|truncatechars:50 }}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" style="text-align: center; color: #999;">No commands yet</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div style="margin-top: 1rem;">
+    <a href="{% url 'agents' %}" class="btn btn-primary">← Back to Agents</a>
+</div>
+{% endblock %}

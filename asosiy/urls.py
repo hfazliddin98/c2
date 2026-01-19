@@ -6,37 +6,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.http import JsonResponse
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-
-def home(request):
-    """API home page"""
-    return JsonResponse({
-        'status': 'online',
-        'platform': 'C2 Platform',
-        'version': '1.0.0',
-        'message': 'Django server ishlayapti!',
-        'endpoints': {
-            'admin': '/admin/',
-            'auth': {
-                'login': '/api/auth/token/',
-                'refresh': '/api/auth/token/refresh/',
-            }
-        }
-    })
+from c2_agents.web_views import home_view, login_view, logout_view, agents_view, agent_detail_view
 
 urlpatterns = [
-    # Home
-    path('', home, name='home'),
+    # Web Interface
+    path('', home_view, name='home'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('agents/', agents_view, name='agents'),
+    path('agents/<str:agent_id>/', agent_detail_view, name='agent_detail'),
     
     # Admin
     path('admin/', admin.site.urls),
     
-    # Authentication (JWT Token)
-    path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    
-    # Agent APIs
+    # Agent APIs (JSON)
     path('api/agent/', include('c2_agents.agent_urls')),
 ]
 

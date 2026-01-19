@@ -17,9 +17,11 @@ class Agent(models.Model):
     ]
     
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    agent_id = models.CharField(max_length=255, unique=True, db_index=True)  # Agent unique ID
     hostname = models.CharField(max_length=255)
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, blank=True, default='')
     platform = models.CharField(max_length=100)
+    architecture = models.CharField(max_length=50, default='x64')  # x64, x86, arm
     ip_address = models.GenericIPAddressField()
     
     # Status
