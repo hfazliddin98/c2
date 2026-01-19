@@ -1,0 +1,1123 @@
+INFO 2025-12-22 23:09:00,006 autoreload Watching for file changes with StatReloader
+INFO 2025-12-23 00:51:01,772 autoreload Watching for file changes with StatReloader
+INFO 2025-12-23 00:59:33,324 autoreload Watching for file changes with StatReloader
+INFO 2025-12-23 01:03:39,899 autoreload Watching for file changes with StatReloader
+INFO 2025-12-23 01:03:59,798 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-23 01:05:26,542 autoreload Watching for file changes with StatReloader
+INFO 2025-12-23 01:10:37,440 autoreload Watching for file changes with StatReloader
+INFO 2025-12-23 01:16:14,424 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-23 01:16:15,408 autoreload Watching for file changes with StatReloader
+INFO 2025-12-24 21:14:04,292 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-24 21:14:24,816 basehttp "POST /api/agent/register HTTP/1.1" 500 95565
+INFO 2025-12-24 21:14:42,694 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-24 21:15:04,411 autoreload Watching for file changes with StatReloader
+INFO 2025-12-24 21:15:24,220 basehttp "POST /api/agent/register HTTP/1.1" 200 117
+INFO 2025-12-24 21:15:24,224 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:26,929 basehttp "POST /api/agent/register HTTP/1.1" 200 117
+INFO 2025-12-24 21:15:26,933 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:29,229 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:34,267 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:36,979 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:39,245 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:44,251 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:46,987 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:49,259 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:54,266 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:57,013 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:15:59,289 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:04,295 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:07,039 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:09,313 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:14,328 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:17,063 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:19,353 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:24,379 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:27,068 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:29,408 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:34,426 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:37,074 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:39,432 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:44,459 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:47,094 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:49,483 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:54,506 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:57,112 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:16:59,527 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:04,553 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:07,127 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:09,576 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:14,598 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:17,144 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:19,621 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:24,628 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:27,172 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:29,635 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:34,640 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:37,180 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:39,652 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:44,679 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:47,187 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:49,683 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:54,712 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:57,190 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:17:59,717 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:04,732 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:07,215 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:09,761 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:14,783 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:17,237 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:19,812 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:24,840 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:27,257 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:29,860 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:34,865 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:37,274 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:18:39,879 basehttp "POST /api/agent/heartbeat HTTP/1.1" 200 37
+INFO 2025-12-24 21:19:48,534 autoreload Watching for file changes with StatReloader
+INFO 2025-12-24 22:47:53,190 autoreload D:\github\c2\asosiy\urls.py changed, reloading.
+INFO 2025-12-24 22:47:54,274 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:34:52,839 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-25 10:35:08,323 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:08,340 log Bad Request: /
+WARNING 2025-12-25 10:35:08,341 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:08,386 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:08,391 log Bad Request: /favicon.ico
+WARNING 2025-12-25 10:35:08,392 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:13,345 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:13,351 log Bad Request: /
+WARNING 2025-12-25 10:35:13,354 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:13,385 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:13,390 log Bad Request: /favicon.ico
+WARNING 2025-12-25 10:35:13,392 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:13,975 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:13,991 log Bad Request: /
+WARNING 2025-12-25 10:35:13,999 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:14,025 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:14,031 log Bad Request: /favicon.ico
+WARNING 2025-12-25 10:35:14,035 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:14,226 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:14,235 log Bad Request: /
+WARNING 2025-12-25 10:35:14,238 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:14,269 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:14,274 log Bad Request: /favicon.ico
+WARNING 2025-12-25 10:35:14,276 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:14,447 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:14,450 log Bad Request: /
+WARNING 2025-12-25 10:35:14,451 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 10:35:14,480 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 10:35:14,484 log Bad Request: /favicon.ico
+WARNING 2025-12-25 10:35:14,486 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+INFO 2025-12-25 10:35:48,489 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 10:35:49,698 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:35:58,003 autoreload D:\github\c2\c2_agents\models.py changed, reloading.
+INFO 2025-12-25 10:35:59,140 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:36:48,582 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 10:36:49,780 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:38:32,039 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:39:11,130 basehttp "GET / HTTP/1.1" 301 0
+INFO 2025-12-25 10:39:11,134 basehttp code 400, message Bad request version ('ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063úú\x00\x00\x00')
+ERROR 2025-12-25 10:39:11,145 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:11,150 basehttp code 400, message Bad request version ('\x01\x1a\x00\x00\x01\x00\x01')
+ERROR 2025-12-25 10:39:11,162 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:25,388 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:39:29,192 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1DÍ\x00\x05\x00\x03\x02h2\x00\x1b\x00\x03\x02\x00\x02\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x12\x00\x00\x00')
+ERROR 2025-12-25 10:39:29,193 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:29,196 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03\x919M\x12ªïÜR\xadÇ<P\x02L¦å')
+ERROR 2025-12-25 10:39:29,197 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:29,203 basehttp code 400, message Bad request version ('S\x96Ì')
+INFO 2025-12-25 10:39:29,204 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+ERROR 2025-12-25 10:39:29,205 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 10:39:29,206 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:29,209 basehttp code 400, message Bad request version ('æK¥\x01Ðsø2\x99)B~F¥TëC¯\x17v~i\x90QHA\x07J&\x9c\x17ÁÈ\x83')
+ERROR 2025-12-25 10:39:29,210 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:29,210 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 10:39:29,212 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:30,300 basehttp code 400, message Bad request version ('\x1aa\x08\x92')
+ERROR 2025-12-25 10:39:30,301 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:30,304 basehttp code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063\x9a\x9a\x00\x00\x00\x17\x00\x00\x00')
+ERROR 2025-12-25 10:39:30,307 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:30,310 basehttp code 400, message Bad request version ('\x9chhqÏÕä')
+ERROR 2025-12-25 10:39:30,311 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:30,314 basehttp code 400, message Bad request version ('¬ç2\x15Ç\x7fn3îuåá\x88\x90ÉÿÒ_ëX\x10Ä¨¼wF9\x12ò')
+ERROR 2025-12-25 10:39:30,316 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:30,317 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+ERROR 2025-12-25 10:39:30,318 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:39:30,322 basehttp code 400, message Bad request version ('Âñ\x06ªÃÕ')
+ERROR 2025-12-25 10:39:30,323 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:13,776 basehttp code 400, message Bad request version ('\x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sÊÊ\x00\x00\x00-\x00\x02\x01\x01\x00')
+ERROR 2025-12-25 10:40:13,777 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:13,780 basehttp code 400, message Bad request version ('W6¿\x84c°ù\x92Á;\x8fzÇ.\x00ðYUm\x02òÒÿ¾u\x15öcU\x87\x89;<*')
+ERROR 2025-12-25 10:40:13,781 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:17,123 basehttp code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93')
+ERROR 2025-12-25 10:40:17,129 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:17,133 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03\x06v*kêß»å¡¿\x00b\x86{¨ÂÜ*Ðô+ê¥hÒ\x0eX\x8dþóU«')
+ERROR 2025-12-25 10:40:17,134 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:17,144 basehttp code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06Sjj\x00\x00\x00')
+INFO 2025-12-25 10:40:17,145 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03r*q@\x11')
+ERROR 2025-12-25 10:40:17,145 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 10:40:17,146 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:17,149 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 10:40:17,150 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:17,150 basehttp code 400, message Bad request version ('8\x83»&ÐîÃ')
+ERROR 2025-12-25 10:40:17,152 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:51,824 basehttp code 400, message Bad request version ('²Ìcÿ\x8aM¼Ù[\x06×ùþ\x1bTÙº¯wyÿ(Àã~Pá!Ý*s\x90<\x163[ø\x80A¢\x9aY¹2Srèé"\x89\x18îq(úým®\x03ST3IT´TrèL\x7f*¡\x89;|\x81KØ\x8d2«"¨')
+ERROR 2025-12-25 10:40:51,826 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:51,832 basehttp code 400, message Bad request version ('È:&ðv')
+ERROR 2025-12-25 10:40:51,832 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:51,839 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03èò\x82\x8a<\x0e(RoéAD\x1aþ~\x88]1#')
+INFO 2025-12-25 10:40:51,840 basehttp code 400, message Bad request version ('<W>Þ"dÎ¸_âÝ)\x05chØ¤CúÑ')
+ERROR 2025-12-25 10:40:51,840 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 10:40:51,841 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:51,845 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x12\x00\x00\x00')
+INFO 2025-12-25 10:40:51,845 basehttp code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x1a\x1a\x00\x00\x00')
+ERROR 2025-12-25 10:40:51,846 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 10:40:51,847 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:58,769 basehttp "GET / HTTP/1.1" 301 0
+INFO 2025-12-25 10:40:58,781 basehttp code 400, message Bad request version ('\x00')
+ERROR 2025-12-25 10:40:58,782 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:40:58,785 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x003\x04ï\x04í')
+ERROR 2025-12-25 10:40:58,786 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:41:38,474 autoreload D:\github\c2\c2_agents\web_views.py changed, reloading.
+INFO 2025-12-25 10:41:39,795 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:42:20,240 basehttp "GET / HTTP/1.1" 301 0
+INFO 2025-12-25 10:42:20,253 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ÚÚ\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x12\x00\x00\x00')
+ERROR 2025-12-25 10:42:20,255 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:42:20,258 basehttp code 400, message Bad request version ('\x97Aø')
+ERROR 2025-12-25 10:42:20,259 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:42:58,978 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 10:43:00,251 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 10:43:35,356 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 10:43:35,358 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:35,363 basehttp code 400, message Bad request version ("ÆQØQÁAà\x8b«Ê\x9fA\x9c\x86\x16C,Ñ¡/«û.p\x8fYç\x93KR6\x0fíäàAì\x87\x12òö.\x89Êº3'sBÎ\x7f\x06EZa~ð\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00+\x00\x07\x06ZZ\x03\x04\x03\x03\x00")
+ERROR 2025-12-25 10:43:35,364 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:35,374 basehttp code 400, message Bad request version ('2Ä\x88\x80\x19ºð\x8c\x8fÑ')
+INFO 2025-12-25 10:43:35,376 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 10:43:35,377 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 10:43:35,378 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:35,381 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 10:43:35,382 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:35,382 basehttp code 400, message Bad request version ('ßO!¤2{\x07^AÃ¢\x16äF')
+ERROR 2025-12-25 10:43:35,383 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:40,638 basehttp code 400, message Bad request version ('\x17\x98à¨?d]\x9b´¹µBË5\x90oyèj')
+ERROR 2025-12-25 10:43:40,639 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:40,642 basehttp code 400, message Bad request version ('×')
+ERROR 2025-12-25 10:43:40,642 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 10:43:50,060 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 10:43:51,199 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 13:02:45,121 basehttp code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s')
+ERROR 2025-12-25 13:02:45,122 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:02:45,123 basehttp code 400, message Bad request version (':bMA+kXi\x81È\x05!Ô(³e¡Kð+-\x14ã"3Å´z')
+ERROR 2025-12-25 13:02:45,124 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:02:45,127 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sZZ\x00\x00DÍ\x00\x05\x00\x03\x02h2\x00+\x00\x07\x06')
+ERROR 2025-12-25 13:02:45,127 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:02:45,131 basehttp code 400, message Bad request version ('C1$ª3\x9c1\x93\x84iª¾ð².!À\x86Y\x13\x15\\9\x06á\x18g×\x8d#ò/9\x05W]')
+ERROR 2025-12-25 13:02:45,153 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:02:50,688 basehttp code 400, message Bad request version ('\x0eñ°.\x89¢¡Ó£¬Ieq')
+ERROR 2025-12-25 13:02:50,688 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:02:50,691 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03\x83»%P\x83á!\x90Ê\x92A\x11\x83Dø;\x18\x92b97OCe(²')
+ERROR 2025-12-25 13:02:50,691 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:04:09,644 basehttp "GET /admin_foydalanuvchi_create/Admin/ HTTP/1.1" 301 0
+INFO 2025-12-25 13:04:09,655 basehttp code 400, message Bad request version ('jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93**\x00\x00\x003\x04ï\x04íêê\x00\x01\x00\x11ì\x04À\x18\x03\x1aÇÉ')
+ERROR 2025-12-25 13:04:09,656 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:04:09,657 basehttp code 400, message Bad request version ('\x7fk(ú4\x12ü4.§ÕC\x02Y:HÄÈ\x94Õ\x81\x84\x87')
+ERROR 2025-12-25 13:04:09,658 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:07:24,715 basehttp code 400, message Bad request version ('ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93ÊÊ\x00\x00\x00')
+ERROR 2025-12-25 13:07:24,716 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:07:24,718 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+ERROR 2025-12-25 13:07:24,718 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:26,934 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 13:36:30,495 basehttp code 400, message Bad request version ('\x81û\x05Õ')
+ERROR 2025-12-25 13:36:30,495 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:30,497 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03')
+INFO 2025-12-25 13:36:30,498 basehttp code 400, message Bad request version ('Wë\x94?-úìþ_\x08LYÕ*G')
+ERROR 2025-12-25 13:36:30,498 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 13:36:30,498 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:30,501 basehttp code 400, message Bad request version ('\x8a\x10J\x901¹')
+ERROR 2025-12-25 13:36:30,501 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:31,342 basehttp code 400, message Bad request version ('oÉÒÜïü')
+ERROR 2025-12-25 13:36:31,342 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:31,343 basehttp code 400, message Bad request version ('½\x00')
+ERROR 2025-12-25 13:36:31,346 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:31,347 basehttp code 400, message Bad request version ('::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93úú\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-12-25 13:36:31,348 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:31,348 basehttp code 400, message Bad request version ("`\x8eØÏ,=@\x98Õø'\x8bü[y\x95\x84¹×Ä\x9e¨K*W\x8f'\x80°\x9c\x80\x9aÕýÏç\x16«7\x9b\x9dÖ\x94AUAºCm[\x92b\x13\x1a\x00\x05\x00\x05\x01\x00\x00\x00\x00DÍ\x00\x05\x00\x03\x02h2ÿ\x01\x00\x01\x00\x00-\x00\x02\x01\x01\x00")
+ERROR 2025-12-25 13:36:31,373 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:34,644 basehttp code 400, message Bad request version ('\x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063')
+ERROR 2025-12-25 13:36:34,645 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:34,646 basehttp code 400, message Bad request version ('÷Í\x01Þ¼K\x86YCGÓ¢.l\x7f±¬®õ;Ü«e[I\x95$\x00\x83~')
+ERROR 2025-12-25 13:36:34,647 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:36:41,438 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 13:36:42,267 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 13:37:36,137 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 13:37:37,029 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 13:37:38,671 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 13:37:39,564 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 13:37:41,273 basehttp code 400, message Bad request version ('Û')
+INFO 2025-12-25 13:37:41,280 basehttp code 400, message Bad request version ('\x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93ÚÚ\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00ÿ\x01\x00\x01\x00\x00\x1b\x00\x03\x02\x00\x02DÍ\x00\x05\x00\x03\x02h2\x00\x17\x00\x00\x00')
+ERROR 2025-12-25 13:37:41,283 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 13:37:41,283 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:41,286 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-12-25 13:37:41,291 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:41,293 basehttp code 400, message Bad request version ('Ws\x87')
+ERROR 2025-12-25 13:37:41,305 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:42,018 basehttp code 400, message Bad request version ('×¨\x19°')
+INFO 2025-12-25 13:37:42,019 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+ERROR 2025-12-25 13:37:42,020 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 13:37:42,020 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:42,024 basehttp code 400, message Bad request version ('v«8Í\x94\x93²±¼\x82Ù\x7fºÔOÐØ´Õ\x993ÐáÅÙ\x13©\x06H\x94V©Çq')
+INFO 2025-12-25 13:37:42,024 basehttp code 400, message Bad request version ('jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063JJ\x00\x00\x00')
+ERROR 2025-12-25 13:37:42,025 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 13:37:42,025 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:46,039 basehttp code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93::\x00\x00\x00')
+ERROR 2025-12-25 13:37:46,039 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:46,042 basehttp code 400, message Bad request version (">ùLká\x11]´v(\x14B\x89\x10¦ä'^_")
+ERROR 2025-12-25 13:37:46,042 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,765 basehttp code 400, message Bad request version ('ÊLJÂÁÒlÌi\x89?Ñt6')
+ERROR 2025-12-25 13:37:49,766 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,768 basehttp code 400, message Bad request version ('\x86\x0f201u¯¾')
+ERROR 2025-12-25 13:37:49,769 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,776 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1ÿ\x01\x00\x01\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-12-25 13:37:49,777 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,780 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x003\x04ï\x04í')
+ERROR 2025-12-25 13:37:49,781 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,795 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00\x12\x00\x00\x00')
+INFO 2025-12-25 13:37:49,795 basehttp code 400, message Bad request version ('::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ÚÚ\x00\x00\x00\x17\x00\x00\x00')
+ERROR 2025-12-25 13:37:49,796 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 13:37:49,798 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,800 basehttp code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S**\x00\x00\x00')
+ERROR 2025-12-25 13:37:49,801 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 13:37:49,802 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03\x8bcü¸KÛs+bý3)')
+ERROR 2025-12-25 13:37:49,803 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 13:37:55,843 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:37:55,850 log Bad Request: /
+WARNING 2025-12-25 13:37:55,851 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 13:37:55,894 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:37:55,897 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:37:55,898 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:07,122 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:07,125 log Bad Request: /admin
+WARNING 2025-12-25 13:38:07,126 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:07,150 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:07,153 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:38:07,154 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:11,240 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:11,243 log Bad Request: /admin/
+WARNING 2025-12-25 13:38:11,244 basehttp "GET /admin/ HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:11,275 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:11,277 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:38:11,278 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:19,941 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:19,944 log Bad Request: /hakerl
+WARNING 2025-12-25 13:38:19,945 basehttp "GET /hakerl HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:19,977 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:19,978 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:38:19,979 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:25,661 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:25,664 log Bad Request: /haker
+WARNING 2025-12-25 13:38:25,665 basehttp "GET /haker HTTP/1.1" 400 143
+ERROR 2025-12-25 13:38:25,699 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:38:25,702 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:38:25,703 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:12,976 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:12,979 log Bad Request: /haker
+WARNING 2025-12-25 13:44:12,980 basehttp "GET /haker HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:13,005 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:13,016 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:44:13,025 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:14,028 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:14,032 log Bad Request: /haker
+WARNING 2025-12-25 13:44:14,033 basehttp "GET /haker HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:14,053 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:14,056 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:44:14,058 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:37,699 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:37,703 log Bad Request: /login
+WARNING 2025-12-25 13:44:37,704 basehttp "GET /login HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:37,750 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:37,752 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:44:37,753 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:45,785 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:45,788 log Bad Request: /admin
+WARNING 2025-12-25 13:44:45,789 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:44:45,819 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:44:45,821 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:44:45,822 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+INFO 2025-12-25 13:45:01,405 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 13:45:02,389 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-25 13:45:04,297 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:04,302 log Bad Request: /admin
+WARNING 2025-12-25 13:45:04,303 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:04,318 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:04,321 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:04,324 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:05,497 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:05,499 log Bad Request: /admin
+WARNING 2025-12-25 13:45:05,499 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:05,516 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:05,519 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:05,521 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,237 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,238 log Bad Request: /admin
+WARNING 2025-12-25 13:45:06,239 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,257 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,259 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:06,260 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,444 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,445 log Bad Request: /admin
+WARNING 2025-12-25 13:45:06,448 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,461 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,463 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:06,464 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,674 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,676 log Bad Request: /admin
+WARNING 2025-12-25 13:45:06,677 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,690 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,693 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:06,693 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,904 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,906 log Bad Request: /admin
+WARNING 2025-12-25 13:45:06,908 basehttp "GET /admin HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:06,922 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:06,924 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:06,924 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:07,813 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:07,815 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:07,815 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:09,130 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:09,133 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:09,133 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:13,203 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:13,205 log Bad Request: /a
+WARNING 2025-12-25 13:45:13,206 basehttp "GET /a HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:13,238 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:13,241 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:13,242 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:17,277 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:17,279 log Bad Request: /
+WARNING 2025-12-25 13:45:17,280 basehttp "GET / HTTP/1.1" 400 143
+ERROR 2025-12-25 13:45:17,303 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hatam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-12-25 13:45:17,305 log Bad Request: /favicon.ico
+WARNING 2025-12-25 13:45:17,306 basehttp "GET /favicon.ico HTTP/1.1" 400 143
+INFO 2025-12-25 13:45:24,888 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 13:45:25,788 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 13:47:33,107 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 13:47:34,152 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 14:18:13,590 basehttp "GET / HTTP/1.1" 301 0
+INFO 2025-12-25 14:18:13,593 basehttp code 400, message Bad request version ('%\x8c¤6êµ2¾¤îð\xad\x04\x9dùºj:Jñ¸-\x8f\x97é')
+ERROR 2025-12-25 14:18:13,593 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:18:13,594 basehttp code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x1a\x1a\x00\x00\x00#\x00\x00\x00+\x00\x07\x06::\x03\x04\x03\x03\x00')
+ERROR 2025-12-25 14:18:13,595 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:18:20,147 basehttp code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s')
+ERROR 2025-12-25 14:18:20,147 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:18:20,149 basehttp code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sêê\x00\x00ÿ\x01\x00\x01\x00\x00')
+ERROR 2025-12-25 14:18:20,150 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:18:35,173 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 14:18:36,053 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 14:46:46,196 basehttp code 400, message Bad request version ('\x89:næE4b')
+ERROR 2025-12-25 14:46:46,197 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:46:46,198 basehttp code 400, message Bad request version ('ý;ÛQ\x06\x00')
+ERROR 2025-12-25 14:46:46,199 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:46:46,200 basehttp code 400, message Bad request version ('!æ\x9b`\x0eÝ\x16Êj§QÈ')
+ERROR 2025-12-25 14:46:46,200 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:46:46,201 basehttp code 400, message Bad request version ('ÒØ')
+ERROR 2025-12-25 14:46:46,202 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:46:46,929 basehttp code 400, message Bad request version ('::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93úú\x00\x00\x00\x17\x00\x00\x00')
+ERROR 2025-12-25 14:46:46,932 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:46:46,932 basehttp code 400, message Bad request version ('Zéviw\x16,çDoG>\x04s\x86\xadLóÈ\x029\x07Ýðò+')
+ERROR 2025-12-25 14:46:46,934 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:46:46,935 basehttp code 400, message Bad request version ('¤')
+INFO 2025-12-25 14:46:46,935 basehttp code 400, message Bad request version ('¸¤\x88')
+ERROR 2025-12-25 14:46:46,938 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 14:46:46,938 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:47:43,986 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 14:47:44,816 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 14:57:09,503 basehttp code 400, message Bad request version ("a¹Ê¬\x88Å'åg3\x92Æ<")
+ERROR 2025-12-25 14:57:09,505 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:57:09,508 basehttp code 400, message Bad request version ('øÖÝEiòË\x0f{u\x8a¥\x1b1&0²l\x08¡n/JÔ8¯1\x8d8\x811\x8d\x00')
+INFO 2025-12-25 14:57:09,509 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S')
+ERROR 2025-12-25 14:57:09,509 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 14:57:09,509 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:57:09,511 basehttp code 400, message Bad request version ('»Ô©\x8c;ÕqÔ')
+ERROR 2025-12-25 14:57:09,511 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:10,009 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 14:58:10,926 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 14:58:25,163 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00+\x00\x07\x06ºº\x03\x04\x03\x03\x003\x04ï\x04íjj\x00\x01\x00\x11ì\x04À\x17òÇª\x9b\x81Ð8QJX\x8bÕ\x9c')
+ERROR 2025-12-25 14:58:25,164 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:25,165 basehttp code 400, message Bad request version ('jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ºº\x00\x00ÿ\x01\x00\x01\x00\x00+\x00\x07\x06jj\x03\x04\x03\x03\x00-\x00\x02\x01\x01\x00')
+ERROR 2025-12-25 14:58:25,166 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:25,167 basehttp code 400, message Bad request version ('ÄÈ7íË\x92')
+ERROR 2025-12-25 14:58:25,167 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:25,167 basehttp code 400, message Bad request version ('\x91ëTa»¡\x9b\x80»\x00\x17\x00\x00\x00-\x00\x02\x01\x01\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-12-25 14:58:25,170 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,747 basehttp code 400, message Bad request version ('\x97\x18h\x80\x1bãë\x19O\x11\x91\x98s\x00ð\x97t}/Ì"\x8c¦³6êû}\x11Ð×»\x01ðÃ\x87y\x887Ó\x04lÞø\x97ë\x9b')
+ERROR 2025-12-25 14:58:26,748 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,748 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x036\x11Ús©Ó\x15\x86Ôñ/\x15')
+ERROR 2025-12-25 14:58:26,749 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,750 basehttp code 400, message Bad request version ('rQÖ«\x04\x93Y@')
+ERROR 2025-12-25 14:58:26,750 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,750 basehttp code 400, message Bad request version ('WWxI¾kGÉä|m\x98I\x0eúè\x9cËØÄH")\x19\x954¬\x91§7¸Ã!Ap\x91\x9a\x07¸,WöB')
+ERROR 2025-12-25 14:58:26,752 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,923 basehttp code 400, message Bad request version ('øc\x08Õ\x87Üj\xad,´\x05Ä«ZÕd0\x91')
+ERROR 2025-12-25 14:58:26,925 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,938 basehttp code 400, message Bad request version ("ä\x82\x01\x15'")
+ERROR 2025-12-25 14:58:26,940 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,941 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06Súú\x00\x00\x00')
+ERROR 2025-12-25 14:58:26,942 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:26,942 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+ERROR 2025-12-25 14:58:26,943 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,116 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+ERROR 2025-12-25 14:58:27,130 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,131 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03)É;Å¹áH\x84/µ\x97')
+ERROR 2025-12-25 14:58:27,132 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,132 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x82Ë*Å®')
+ERROR 2025-12-25 14:58:27,135 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,135 basehttp code 400, message Bad request version (')pì\x9f\x00ê')
+ERROR 2025-12-25 14:58:27,136 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,304 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+ERROR 2025-12-25 14:58:27,307 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,307 basehttp code 400, message Bad request version ('¸,ÁÎñ°\x86Ä\x08x')
+ERROR 2025-12-25 14:58:27,308 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,309 basehttp code 400, message Bad request version ('6ÇM\x10\x93Yè´\x8d')
+ERROR 2025-12-25 14:58:27,310 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,310 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x12\x00\x00\x00\x17\x00\x00\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+ERROR 2025-12-25 14:58:27,312 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,469 basehttp code 400, message Bad request version ('RÈcË>a¼Zr¼@U\x93#1+,Õp')
+ERROR 2025-12-25 14:58:27,472 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,486 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sZZ\x00\x00\x00\x12\x00\x00\x00')
+ERROR 2025-12-25 14:58:27,486 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,486 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 14:58:27,487 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,492 basehttp code 400, message Bad request version ('ó1S\x05')
+ERROR 2025-12-25 14:58:27,495 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,650 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01ÿ\x01\x00\x01\x00\x00')
+ERROR 2025-12-25 14:58:27,653 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,662 basehttp code 400, message Bad request version ('\x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s\x1a\x1a\x00\x00\x00')
+ERROR 2025-12-25 14:58:27,664 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,664 basehttp code 400, message Bad request version ('»çÄ7!#À!)\x97£\x13ò\x10\x0ftäÅ\x14#Etga9\x89\x9d"ÒJ\x9aTY9°\x97êá*d\x17')
+ERROR 2025-12-25 14:58:27,665 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,666 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03W0ÈÛ#ôK')
+ERROR 2025-12-25 14:58:27,670 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,836 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03T\x16Þ\x10\x93UjÚ\x8e)')
+ERROR 2025-12-25 14:58:27,838 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,840 basehttp code 400, message Bad request version ("%}4hWÝôl\x83¥\x00q)\x93I'\x89èE\x15qx¬#n\x10é+Ká\x0e·\x00")
+ERROR 2025-12-25 14:58:27,840 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,840 basehttp code 400, message Bad request version ('\x15\x17\x01·²$tnËÄó\x17ÈòN«;KÓa\x02Ñê')
+ERROR 2025-12-25 14:58:27,841 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:27,842 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00#\x00\x00\x00\x12\x00\x00\x00\x17\x00\x00\x00')
+ERROR 2025-12-25 14:58:27,843 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,015 basehttp code 400, message Bad request version ('\x83\x96&\x10')
+INFO 2025-12-25 14:58:28,015 basehttp code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063::\x00\x00\x00')
+ERROR 2025-12-25 14:58:28,015 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 14:58:28,015 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,017 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00-\x00\x02\x01\x01DÍ\x00\x05\x00\x03\x02h2ÿ\x01\x00\x01\x00\x00')
+ERROR 2025-12-25 14:58:28,018 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,018 basehttp code 400, message Bad request version ("Uµp\x83gOD9ÉÃk\x8b\x04Ü³Ð¥\x8bÚä\x9fõü\x18X5\x07;e`\x86ã\x96Øw\x10\x8cp1µC\x025\x93]\x04AÄËX\x9b\x06kv3ªd&ôs»e(ÄãW0\x97\x9cüë]üB\x8a\x05Ç:'$\x91¦\x84uÄXLÎ\x91ËÓ\x9c\x8d;\x80\x03\x07Ð\x98\x8dD6ÝÖ\x9eú\x17É¡\x92\x123Z/Ã\x80Á²\x94PÙ")
+ERROR 2025-12-25 14:58:28,020 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,151 basehttp code 400, message Bad request version ('ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s\x9a\x9a\x00\x00ÿ\x01\x00\x01\x00\x003\x04ï\x04íúú\x00\x01\x00\x11ì\x04ÀáÆÉÎ2cV\x191Äb\x9bÈ1\x82e\x8cÉ')
+ERROR 2025-12-25 14:58:28,165 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,167 basehttp code 400, message Bad request version ('¢\x18¥\x98¦Âf)\x80Ùb¾T.¦\x1aX)T;"#\x89')
+ERROR 2025-12-25 14:58:28,168 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,168 basehttp code 400, message Bad request version ('´ÙÆ··§\x8bn\x1b')
+ERROR 2025-12-25 14:58:28,170 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:28,170 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03w\x84ÐùL\x0ev*á.1ÁÏ\x0140\x9e\x0fÔuß')
+ERROR 2025-12-25 14:58:28,170 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:38,751 basehttp code 400, message Bad request version ('_ËÅ\x14j?KÖËS')
+ERROR 2025-12-25 14:58:38,752 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:58:38,754 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+ERROR 2025-12-25 14:58:38,754 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:08,184 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 14:59:09,097 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 14:59:10,706 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 14:59:11,582 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 14:59:14,225 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s')
+ERROR 2025-12-25 14:59:14,230 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:14,239 basehttp code 400, message Bad request version ('\x00zX\x81ÓNvÌ\x8b\x9b°]ëQjÜWè¬[1ÑÓþt(\x80^\x80IS\x87\x00')
+ERROR 2025-12-25 14:59:14,243 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:14,251 basehttp code 400, message Bad request version ('K¡b¹vâ³±ÚiDÚ\x82¯Z¶\x9a\x94Bu\x8b')
+ERROR 2025-12-25 14:59:14,252 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:14,254 basehttp code 400, message Bad request version ('&¹L\x14b\x95\x93\x00\x80«í\x96')
+ERROR 2025-12-25 14:59:14,256 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:16,462 basehttp code 400, message Bad request version ('ËÐ¥\x02°Å-£»ÆB!\x03#z\x92ûOñ\x9cr\x95[\x80øpÅ')
+INFO 2025-12-25 14:59:16,463 basehttp code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x8a\x8a\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-12-25 14:59:16,464 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 14:59:16,463 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:16,468 basehttp code 400, message Bad request version ('¢Î8"')
+INFO 2025-12-25 14:59:16,474 basehttp code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063')
+ERROR 2025-12-25 14:59:16,476 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-12-25 14:59:16,474 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,124 basehttp code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sÊÊ\x00\x00\x00')
+ERROR 2025-12-25 14:59:17,129 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,130 basehttp code 400, message Bad request version ('h|û~\x02Ü\x9e\x91\x04¯)\x93\x9b÷Ä³\x08F\x97')
+ERROR 2025-12-25 14:59:17,131 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,131 basehttp code 400, message Bad request version ('cÌmD|ÍêóB\x90Ö\x07ÿÃR\x1bæP\x96+\x8e¤\x11`E\\\x99õ\x9c,')
+ERROR 2025-12-25 14:59:17,134 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,137 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03¤fzxÇí\x15¦°ÄX,.B,7')
+ERROR 2025-12-25 14:59:17,159 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,573 basehttp code 400, message Bad request version ('úæc)v')
+ERROR 2025-12-25 14:59:17,575 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,576 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+ERROR 2025-12-25 14:59:17,577 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,577 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03%ÔøãcmÁÛ§¸]³?8')
+ERROR 2025-12-25 14:59:17,578 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,579 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+ERROR 2025-12-25 14:59:17,602 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,743 basehttp code 400, message Bad request version ('\x91\x15Ê\x174âe¸"´T\x87ç\x96\x18ÖÃÕ¹¼=Ú\x10\x98')
+ERROR 2025-12-25 14:59:17,755 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,760 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03û')
+ERROR 2025-12-25 14:59:17,761 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,764 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+ERROR 2025-12-25 14:59:17,764 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,765 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x12\x00\x00\x00')
+ERROR 2025-12-25 14:59:17,766 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,909 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93\x8a\x8a\x00\x00\x00')
+ERROR 2025-12-25 14:59:17,912 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,922 basehttp code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-12-25 14:59:17,923 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,923 basehttp code 400, message Bad request version ('Â\x876')
+ERROR 2025-12-25 14:59:17,924 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 14:59:17,925 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x00+\x00\x07\x06ªª\x03\x04\x03\x03\x003\x04ï\x04í')
+ERROR 2025-12-25 14:59:17,926 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:03:37,115 basehttp code 400, message Bad request version ('ÛÖåÝ/\x9d,N')
+ERROR 2025-12-25 15:03:37,115 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:03:37,117 basehttp code 400, message Bad request version ('é\x00')
+ERROR 2025-12-25 15:03:37,117 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:05:59,600 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 15:06:00,620 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 15:06:43,966 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 15:06:44,829 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 15:07:12,405 basehttp code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063jj\x00\x00\x00')
+ERROR 2025-12-25 15:07:12,407 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:12,408 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03¨Px.È\x867LU')
+ERROR 2025-12-25 15:07:12,409 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:12,410 basehttp code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sÊÊ\x00\x00\x00#\x00\x00\x00\x12\x00\x00\x00-\x00\x02\x01\x01\x00')
+ERROR 2025-12-25 15:07:12,411 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:12,411 basehttp code 400, message Bad request version ('.\x057\x99\x92\x8dzq\x8bM\x95²Ð\x94&Á\x1a\xad\x86X®²\x8bhe\x12O³ª$Ô\x12')
+ERROR 2025-12-25 15:07:12,412 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:14,459 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03qE¾X×i')
+ERROR 2025-12-25 15:07:14,462 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:14,463 basehttp code 400, message Bad request version ('-ËÞp,å"')
+ERROR 2025-12-25 15:07:14,465 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:14,465 basehttp code 400, message Bad request version ('ê\x05')
+ERROR 2025-12-25 15:07:14,467 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:14,468 basehttp code 400, message Bad request version ('´\x00-\x00\x02\x01\x01\x00\x1b\x00\x03\x02\x00\x02\x00+\x00\x07\x06JJ\x03\x04\x03\x03\x00')
+ERROR 2025-12-25 15:07:14,471 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:18,401 basehttp code 400, message Bad request version ('ò%È»\x90üZx\x04°\x08æ|\x16\x89R\x17\x82\x8e1[Â´\x1bñ')
+ERROR 2025-12-25 15:07:18,402 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:18,404 basehttp code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+ERROR 2025-12-25 15:07:18,404 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:21,996 basehttp code 400, message Bad request version ('\x9bË³F\x03B¬óä\x00')
+ERROR 2025-12-25 15:07:22,001 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:22,002 basehttp code 400, message Bad request version ('U')
+ERROR 2025-12-25 15:07:22,004 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:22,006 basehttp code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x1a\x1a\x00\x00DÍ\x00\x05\x00\x03\x02h2\x00-\x00\x02\x01\x01\x00')
+ERROR 2025-12-25 15:07:22,007 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:22,007 basehttp code 400, message Bad request version ('UÌ\x19øM\x80îªóT´iä$`ÓW1\x8f|Sý±û\x91\x17×\x01é\x91°\x05\x00\x90"')
+ERROR 2025-12-25 15:07:22,009 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-12-25 15:07:27,128 autoreload D:\github\c2\asosiy\settings.py changed, reloading.
+INFO 2025-12-25 15:07:27,794 autoreload Watching for file changes with StatReloader
